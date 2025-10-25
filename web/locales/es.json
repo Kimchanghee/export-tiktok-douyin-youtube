@@ -31,5 +31,38 @@
   "step1": "Copiar URL del video",
   "step2": "Pegar arriba",
   "step3": "Hacer clic en descargar",
-  "step4": "¡Guardar archivo!"
+  "step4": "¡Guardar archivo!",
+  "seo": {
+    "title": "Descargador de Videos Gratis - Descargar TikTok, Douyin, YouTube, Threads 2025",
+    "description": "Descarga videos de alta calidad de TikTok, Douyin, YouTube y Threads gratis. Descargador de videos en línea rápido, seguro y fácil. Sin marca de agua, sin inicio de sesión, descargas ilimitadas.",
+    "keywords": "descargador de videos, descargar tiktok, descargar youtube, descargar douyin, descargar threads, guardar video gratis, quitar marca de agua, video HD",
+    "og_title": "Descargador de Videos Gratis - TikTok · YouTube · Douyin · Threads",
+    "og_description": "Descarga videos gratis sin marcas de agua. Herramienta en línea rápida y segura."
+  },
+  "faq": [
+    {
+      "question": "¿Este descargador de videos es gratis?",
+      "answer": "Sí, es completamente gratis. Sin costos ocultos ni suscripciones, y puedes descargar videos ilimitados."
+    },
+    {
+      "question": "¿Qué plataformas son compatibles?",
+      "answer": "Admitimos TikTok, Douyin, YouTube (videos regulares y Shorts) y Threads. Pronto habrá más plataformas."
+    },
+    {
+      "question": "¿Los videos descargados tienen marcas de agua?",
+      "answer": "Depende de la plataforma. Cuando es posible, proporcionamos versiones sin marca de agua y los videos siempre se descargan en la máxima calidad disponible."
+    },
+    {
+      "question": "¿Necesito iniciar sesión para descargar videos?",
+      "answer": "No, no necesitas iniciar sesión ni registrarte. Solo pega la URL del video y comienza a descargar de inmediato."
+    },
+    {
+      "question": "¿Hay un límite en las descargas?",
+      "answer": "Sin límites. Puedes descargar tantos videos como quieras, cuando quieras."
+    },
+    {
+      "question": "¿Puedo usarlo en móvil?",
+      "answer": "Sí, funciona perfectamente en navegadores móviles. Totalmente compatible con iOS y Android."
+    }
+  ]
 }

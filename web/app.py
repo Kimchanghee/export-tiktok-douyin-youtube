@@ -333,6 +333,74 @@ def platforms():
         ]
     })
 
+@app.route('/robots.txt')
+def robots():
+    """Serve robots.txt"""
+    return send_file(
+        os.path.join(os.path.dirname(__file__), 'static', 'robots.txt'),
+        mimetype='text/plain'
+    )
+
+@app.route('/sitemap.xml')
+def sitemap():
+    """Generate dynamic sitemap.xml"""
+    from flask import make_response
+    from datetime import datetime
+
+    # Get base URL from environment or request
+    base_url = os.environ.get('BASE_URL', request.url_root.rstrip('/'))
+
+    # Build sitemap XML
+    xml = ['<?xml version="1.0" encoding="UTF-8"?>']
+    xml.append('<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9"')
+    xml.append(' xmlns:xhtml="http://www.w3.org/1999/xhtml">')
+
+    today = datetime.now().strftime('%Y-%m-%d')
+
+    # Add homepage for each language
+    for lang in SUPPORTED_LANGUAGES:
+        lang_code = lang['code']
+
+        # Main page URL
+        if lang_code == DEFAULT_LANGUAGE:
+            url = base_url + '/'
+        else:
+            url = base_url + f'/?lang={lang_code}'
+
+        xml.append('  <url>')
+        xml.append(f'    <loc>{url}</loc>')
+        xml.append(f'    <lastmod>{today}</lastmod>')
+        xml.append('    <changefreq>weekly</changefreq>')
+        xml.append('    <priority>1.0</priority>')
+
+        # Add alternate language links
+        for alt_lang in SUPPORTED_LANGUAGES:
+            alt_code = alt_lang['code']
+            if alt_code == DEFAULT_LANGUAGE:
+                alt_url = base_url + '/'
+            else:
+                alt_url = base_url + f'/?lang={alt_code}'
+
+            xml.append(f'    <xhtml:link rel="alternate" hreflang="{alt_code}" href="{alt_url}"/>')
+
+        xml.append('  </url>')
+
+    # Add API documentation endpoints
+    api_endpoints = ['/api/platforms', '/api/languages', '/api/health']
+    for endpoint in api_endpoints:
+        xml.append('  <url>')
+        xml.append(f'    <loc>{base_url}{endpoint}</loc>')
+        xml.append(f'    <lastmod>{today}</lastmod>')
+        xml.append('    <changefreq>monthly</changefreq>')
+        xml.append('    <priority>0.5</priority>')
+        xml.append('  </url>')
+
+    xml.append('</urlset>')
+
+    response = make_response('\n'.join(xml))
+    response.headers['Content-Type'] = 'application/xml; charset=utf-8'
+    return response
+
 # Cleanup old files (run periodically in production)
 def cleanup_old_downloads():
     """Remove downloads older than 1 hour"""

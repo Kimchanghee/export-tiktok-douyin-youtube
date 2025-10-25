@@ -1,0 +1,63 @@
+# robots.txt for Video Downloader
+# Updated: 2025-10-25
+
+User-agent: *
+Allow: /
+Allow: /api/languages
+Allow: /api/platforms
+Allow: /*.css
+Allow: /*.js
+Allow: /*.jpg
+Allow: /*.jpeg
+Allow: /*.png
+Allow: /*.gif
+Allow: /*.webp
+Allow: /*.svg
+
+# Disallow sensitive endpoints
+Disallow: /api/download
+Disallow: /api/file/
+Disallow: /api/set-language
+
+# Crawl delay
+Crawl-delay: 0.5
+
+# Sitemap
+Sitemap: https://your-domain.com/sitemap.xml
+
+# Google Bot specific
+User-agent: Googlebot
+Allow: /
+Crawl-delay: 0.2
+
+# Bing Bot specific
+User-agent: Bingbot
+Allow: /
+Crawl-delay: 0.5
+
+# AI Crawlers (for AEO - Answer Engine Optimization)
+User-agent: GPTBot
+Allow: /
+Allow: /api/platforms
+
+User-agent: ChatGPT-User
+Allow: /
+
+User-agent: Google-Extended
+Allow: /
+
+User-agent: anthropic-ai
+Allow: /
+
+User-agent: Claude-Web
+Allow: /
+
+# Other search engines
+User-agent: Yandex
+Allow: /
+
+User-agent: Baiduspider
+Allow: /
+
+User-agent: DuckDuckBot
+Allow: /

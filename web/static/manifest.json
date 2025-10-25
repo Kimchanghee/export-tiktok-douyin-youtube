@@ -1,0 +1,30 @@
+{
+  "name": "Free Video Downloader - TikTok, YouTube, Douyin, Threads",
+  "short_name": "Video Downloader",
+  "description": "Download videos from TikTok, YouTube, Douyin, and Threads for free. Fast, safe, and easy.",
+  "start_url": "/",
+  "display": "standalone",
+  "background_color": "#ffffff",
+  "theme_color": "#2563eb",
+  "orientation": "portrait-primary",
+  "icons": [
+    {
+      "src": "/static/images/icon-192x192.png",
+      "sizes": "192x192",
+      "type": "image/png",
+      "purpose": "any maskable"
+    },
+    {
+      "src": "/static/images/icon-512x512.png",
+      "sizes": "512x512",
+      "type": "image/png",
+      "purpose": "any maskable"
+    }
+  ],
+  "categories": ["utilities", "productivity"],
+  "lang": "en",
+  "dir": "ltr",
+  "scope": "/",
+  "related_applications": [],
+  "prefer_related_applications": false
+}

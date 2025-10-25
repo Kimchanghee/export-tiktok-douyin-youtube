@@ -31,5 +31,38 @@
   "step1": "复制视频URL",
   "step2": "粘贴到上方输入框",
   "step3": "点击下载按钮",
-  "step4": "保存文件!"
+  "step4": "保存文件!",
+  "seo": {
+    "title": "免费视频下载器 - 下载TikTok、抖音、YouTube、Threads 2025",
+    "description": "从TikTok、抖音、YouTube和Threads免费下载高清视频。快速、安全、简单的在线视频下载工具。无水印，无需登录，无限下载。",
+    "keywords": "视频下载器, TikTok下载, YouTube下载, 抖音下载, Threads下载, 免费视频保存, 去除水印, 高清视频, 在线下载",
+    "og_title": "免费视频下载器 - TikTok · YouTube · 抖音 · Threads",
+    "og_description": "免费下载视频，无水印。快速安全的在线工具。"
+  },
+  "faq": [
+    {
+      "question": "这个视频下载器免费吗？",
+      "answer": "是的，完全免费。没有隐藏费用或订阅费，您可以无限下载视频。"
+    },
+    {
+      "question": "支持哪些平台？",
+      "answer": "我们支持TikTok、抖音、YouTube（常规视频和Shorts）和Threads。更多平台即将推出。"
+    },
+    {
+      "question": "下载的视频有水印吗？",
+      "answer": "这取决于平台。在可能的情况下，我们提供无水印版本，视频始终以最高质量下载。"
+    },
+    {
+      "question": "下载视频需要登录吗？",
+      "answer": "不需要，您无需登录或注册。只需粘贴视频URL即可立即开始下载。"
+    },
+    {
+      "question": "下载次数有限制吗？",
+      "answer": "没有限制。您可以随时下载任意数量的视频。"
+    },
+    {
+      "question": "可以在手机上使用吗？",
+      "answer": "是的，在移动浏览器上完美运行。完全支持iOS和Android。"
+    }
+  ]
 }
