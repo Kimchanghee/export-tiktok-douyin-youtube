@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html lang="{{ current_lang }}">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="{{ translations.description }}">
+    <title>{{ translations.title }}</title>
+    {% if analytics.enabled %}
+    <script async src="https://www.googletagmanager.com/gtag/js?id={{ analytics.tracking_id }}"></script>
+    <script>
+        window.dataLayer = window.dataLayer || [];
+        function gtag(){dataLayer.push(arguments);}
+        gtag('js', new Date());
+        gtag('config', '{{ analytics.tracking_id }}');
+    </script>
+    {% endif %}
+</head>
+<body>
+<h1>Test</h1>
+</body>
+</html>

@@ -1,0 +1,99 @@
+{
+  "adsense": {
+    "enabled": false,
+    "client_id": "ca-pub-XXXXXXXXXXXXXXXX",
+    "auto_ads": false,
+    "slots": {
+      "header_banner": {
+        "enabled": true,
+        "slot_id": "1111111111",
+        "format": "horizontal",
+        "style": "display:block",
+        "responsive": true
+      },
+      "top_content": {
+        "enabled": true,
+        "slot_id": "2222222222",
+        "format": "rectangle",
+        "style": "display:block",
+        "responsive": true
+      },
+      "sidebar": {
+        "enabled": false,
+        "slot_id": "3333333333",
+        "format": "vertical",
+        "style": "display:inline-block;width:300px;height:600px",
+        "responsive": false
+      },
+      "bottom_content": {
+        "enabled": true,
+        "slot_id": "4444444444",
+        "format": "rectangle",
+        "style": "display:block",
+        "responsive": true
+      },
+      "footer_banner": {
+        "enabled": true,
+        "slot_id": "5555555555",
+        "format": "horizontal",
+        "style": "display:block",
+        "responsive": true
+      }
+    }
+  },
+  "interstitial": {
+    "enabled": false,
+    "provider": "adsense",
+    "slot_id": "6666666666",
+    "triggers": {
+      "on_download_click": true,
+      "on_page_load": false,
+      "frequency": "every_time",
+      "delay_seconds": 0
+    },
+    "settings": {
+      "skip_after_seconds": 5,
+      "close_button": true,
+      "countdown": true
+    }
+  },
+  "custom_banner": {
+    "enabled": false,
+    "positions": {
+      "header": {
+        "enabled": false,
+        "html": "<a href='https://example.com' target='_blank'><img src='/static/ads/header-ad.png' alt='Ad'></a>",
+        "max_height": "90px"
+      },
+      "sidebar": {
+        "enabled": false,
+        "html": "<a href='https://example.com' target='_blank'><img src='/static/ads/sidebar-ad.png' alt='Ad'></a>",
+        "width": "300px"
+      },
+      "footer": {
+        "enabled": false,
+        "html": "<a href='https://example.com' target='_blank'><img src='/static/ads/footer-ad.png' alt='Ad'></a>",
+        "max_height": "90px"
+      }
+    }
+  },
+  "popup_ad": {
+    "enabled": false,
+    "triggers": {
+      "on_download_click": true,
+      "on_download_complete": false,
+      "delay_seconds": 0
+    },
+    "settings": {
+      "type": "new_tab",
+      "url": "https://example.com/offer",
+      "frequency": "every_time"
+    }
+  },
+  "analytics": {
+    "track_ad_impressions": true,
+    "track_ad_clicks": true,
+    "track_interstitial_shown": true,
+    "track_interstitial_skipped": true
+  }
+}

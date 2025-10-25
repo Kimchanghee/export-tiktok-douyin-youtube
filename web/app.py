@@ -171,6 +171,7 @@ def index():
     translations = load_translation(lang)
     adsense_config = load_config('adsense')
     analytics_config = load_config('analytics')
+    ads_config = load_config('ads')
 
     return render_template(
         'index.html',
@@ -178,7 +179,8 @@ def index():
         languages=SUPPORTED_LANGUAGES,
         current_lang=lang,
         adsense=adsense_config,
-        analytics=analytics_config
+        analytics=analytics_config,
+        ads=ads_config
     )
 
 @app.route('/api/set-language', methods=['POST'])
