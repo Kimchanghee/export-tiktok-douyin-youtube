@@ -21,6 +21,10 @@ if "%PROJECT_ID%"=="" (
 
 echo ✓ 프로젝트 ID: %PROJECT_ID%
 
+REM 프로젝트 번호 확인
+for /f "tokens=*" %%i in ('gcloud projects describe %PROJECT_ID% --format="value(projectNumber)"') do set PROJECT_NUMBER=%%i
+echo ✓ 프로젝트 번호: %PROJECT_NUMBER%
+
 REM 리전 확인
 for /f "tokens=*" %%i in ('gcloud config get-value run/region 2^>nul') do set REGION=%%i
 
@@ -35,7 +39,34 @@ echo.
 
 REM 필요한 API 활성화
 echo 📦 필요한 API 활성화 중...
-gcloud services enable run.googleapis.com cloudbuild.googleapis.com containerregistry.googleapis.com
+gcloud services enable run.googleapis.com --quiet
+gcloud services enable cloudbuild.googleapis.com --quiet
+gcloud services enable containerregistry.googleapis.com --quiet
+gcloud services enable iam.googleapis.com --quiet
+echo ✓ API 활성화 완료
+echo.
+
+REM Cloud Build 권한 확인 및 설정
+echo 🔐 Cloud Build 권한 확인 중...
+set CLOUDBUILD_SA=%PROJECT_NUMBER%@cloudbuild.gserviceaccount.com
+
+echo Cloud Build 서비스 계정: %CLOUDBUILD_SA%
+echo.
+echo 권한을 자동으로 설정합니다...
+echo.
+
+REM 권한 부여
+echo   - roles/run.admin
+gcloud projects add-iam-policy-binding %PROJECT_ID% --member="serviceAccount:%CLOUDBUILD_SA%" --role="roles/run.admin" --quiet >nul 2>&1
+
+echo   - roles/iam.serviceAccountUser
+gcloud projects add-iam-policy-binding %PROJECT_ID% --member="serviceAccount:%CLOUDBUILD_SA%" --role="roles/iam.serviceAccountUser" --quiet >nul 2>&1
+
+echo   - roles/storage.admin
+gcloud projects add-iam-policy-binding %PROJECT_ID% --member="serviceAccount:%CLOUDBUILD_SA%" --role="roles/storage.admin" --quiet >nul 2>&1
+
+echo.
+echo ✓ 권한 설정 완료
 echo.
 
 REM 배포 확인
