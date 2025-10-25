@@ -1,0 +1,69 @@
+# This file specifies files that are *not* uploaded to Google Cloud
+# using gcloud. It follows the same syntax as .gitignore, with the addition of
+# "#!include" directives (which insert the entries of the given .gitignore-style
+# file at that point).
+
+.gcloudignore
+.git
+.gitignore
+
+# Python
+__pycache__/
+*.py[cod]
+*$py.class
+*.so
+.Python
+env/
+venv/
+ENV/
+*.egg-info/
+dist/
+build/
+
+# Tests
+test_*.py
+*_test.py
+tests/
+
+# Documentation
+README*.md
+*.txt
+사용방법.txt
+DEPLOYMENT.md
+
+# IDE
+.vscode/
+.idea/
+*.swp
+*.swo
+
+# Build files
+*.exe
+*.spec
+build/
+dist/
+build.bat
+build_exe.py
+
+# Desktop app
+main.py
+run.bat
+icon.ico
+icon.png
+create_icon.py
+
+# Test outputs
+threads_*.json
+threads_*.txt
+threads_*.png
+jina_*.txt
+instagram_*.html
+mobile_*.html
+oembed_*.json
+*.pyc
+
+# Docker (not needed for Cloud Build)
+docker-compose.yml
+
+# Claude
+.claude/

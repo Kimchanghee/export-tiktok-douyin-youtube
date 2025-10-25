@@ -1,0 +1,699 @@
+<!DOCTYPE html>
+<html lang="{{ current_lang }}">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="{{ translations.description }}">
+    <meta name="keywords" content="video downloader, tiktok, youtube, douyin, threads, download video, free">
+    <title>{{ translations.title }} - {{ translations.subtitle }}</title>
+
+    <!-- Google AdSense -->
+    <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-XXXXXXXXXXXXXXXX"
+         crossorigin="anonymous"></script>
+
+    <style>
+        :root {
+            --primary-gradient: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            --bg-light: #ffffff;
+            --bg-dark: #1a1a2e;
+            --text-light: #333333;
+            --text-dark: #ffffff;
+            --card-light: #ffffff;
+            --card-dark: #16213e;
+            --border-light: #e0e0e0;
+            --border-dark: #2d3561;
+            --shadow-light: rgba(0, 0, 0, 0.1);
+            --shadow-dark: rgba(0, 0, 0, 0.5);
+            --success: #4CAF50;
+            --error: #f44336;
+        }
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, 'Helvetica Neue', Arial, sans-serif;
+            background: var(--primary-gradient);
+            min-height: 100vh;
+            padding: 20px;
+            transition: background 0.3s ease;
+        }
+
+        body.dark-mode {
+            background: linear-gradient(135deg, #1a1a2e 0%, #16213e 100%);
+        }
+
+        .header {
+            max-width: 1200px;
+            margin: 0 auto 30px;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            flex-wrap: wrap;
+            gap: 15px;
+        }
+
+        .header-controls {
+            display: flex;
+            gap: 15px;
+            align-items: center;
+        }
+
+        .language-selector {
+            position: relative;
+        }
+
+        .lang-button {
+            background: rgba(255, 255, 255, 0.95);
+            border: none;
+            padding: 10px 20px;
+            border-radius: 25px;
+            cursor: pointer;
+            font-size: 14px;
+            display: flex;
+            align-items: center;
+            gap: 8px;
+            box-shadow: 0 2px 10px var(--shadow-light);
+            transition: all 0.3s ease;
+        }
+
+        .lang-button:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 4px 15px var(--shadow-light);
+        }
+
+        .lang-dropdown {
+            position: absolute;
+            top: 50px;
+            right: 0;
+            background: var(--card-light);
+            border-radius: 15px;
+            box-shadow: 0 10px 30px var(--shadow-light);
+            min-width: 200px;
+            max-height: 400px;
+            overflow-y: auto;
+            display: none;
+            z-index: 1000;
+        }
+
+        .lang-dropdown.active {
+            display: block;
+        }
+
+        .lang-option {
+            padding: 12px 20px;
+            cursor: pointer;
+            transition: background 0.2s ease;
+            display: flex;
+            align-items: center;
+            gap: 10px;
+        }
+
+        .lang-option:hover {
+            background: rgba(102, 126, 234, 0.1);
+        }
+
+        .lang-option.selected {
+            background: rgba(102, 126, 234, 0.2);
+            font-weight: 600;
+        }
+
+        .dark-mode-toggle {
+            background: rgba(255, 255, 255, 0.95);
+            border: none;
+            padding: 10px 15px;
+            border-radius: 25px;
+            cursor: pointer;
+            font-size: 20px;
+            box-shadow: 0 2px 10px var(--shadow-light);
+            transition: all 0.3s ease;
+        }
+
+        .dark-mode-toggle:hover {
+            transform: translateY(-2px);
+        }
+
+        .container {
+            background: var(--card-light);
+            border-radius: 25px;
+            box-shadow: 0 20px 60px var(--shadow-light);
+            max-width: 800px;
+            width: 100%;
+            margin: 0 auto;
+            padding: 50px 40px;
+            transition: all 0.3s ease;
+        }
+
+        body.dark-mode .container {
+            background: var(--card-dark);
+            box-shadow: 0 20px 60px var(--shadow-dark);
+            color: var(--text-dark);
+        }
+
+        h1 {
+            text-align: center;
+            font-size: 36px;
+            margin-bottom: 10px;
+            background: var(--primary-gradient);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+        }
+
+        .subtitle {
+            text-align: center;
+            color: #666;
+            margin-bottom: 15px;
+            font-size: 16px;
+        }
+
+        body.dark-mode .subtitle {
+            color: #aaa;
+        }
+
+        .description {
+            text-align: center;
+            color: #888;
+            margin-bottom: 40px;
+            font-size: 14px;
+        }
+
+        .platforms {
+            display: flex;
+            justify-content: center;
+            gap: 12px;
+            margin-bottom: 40px;
+            flex-wrap: wrap;
+        }
+
+        .platform-badge {
+            background: linear-gradient(135deg, rgba(102, 126, 234, 0.1) 0%, rgba(118, 75, 162, 0.1) 100%);
+            padding: 10px 18px;
+            border-radius: 20px;
+            font-size: 13px;
+            font-weight: 500;
+            transition: transform 0.2s ease;
+        }
+
+        .platform-badge:hover {
+            transform: scale(1.05);
+        }
+
+        .input-group {
+            margin-bottom: 25px;
+        }
+
+        label {
+            display: block;
+            margin-bottom: 10px;
+            font-weight: 600;
+            font-size: 15px;
+        }
+
+        input[type="text"] {
+            width: 100%;
+            padding: 18px 20px;
+            border: 2px solid var(--border-light);
+            border-radius: 15px;
+            font-size: 16px;
+            transition: all 0.3s ease;
+            background: var(--bg-light);
+        }
+
+        body.dark-mode input[type="text"] {
+            background: var(--bg-dark);
+            border-color: var(--border-dark);
+            color: var(--text-dark);
+        }
+
+        input[type="text"]:focus {
+            outline: none;
+            border-color: #667eea;
+            box-shadow: 0 0 0 3px rgba(102, 126, 234, 0.1);
+        }
+
+        button.download-btn {
+            width: 100%;
+            padding: 18px;
+            background: var(--primary-gradient);
+            color: white;
+            border: none;
+            border-radius: 15px;
+            font-size: 18px;
+            font-weight: 700;
+            cursor: pointer;
+            transition: all 0.3s ease;
+            box-shadow: 0 4px 15px rgba(102, 126, 234, 0.4);
+        }
+
+        button.download-btn:hover:not(:disabled) {
+            transform: translateY(-3px);
+            box-shadow: 0 8px 25px rgba(102, 126, 234, 0.5);
+        }
+
+        button.download-btn:disabled {
+            opacity: 0.6;
+            cursor: not-allowed;
+            transform: none;
+        }
+
+        .loading {
+            display: none;
+            text-align: center;
+            margin-top: 30px;
+        }
+
+        .loading.active {
+            display: block;
+        }
+
+        .spinner {
+            border: 4px solid rgba(102, 126, 234, 0.1);
+            border-top: 4px solid #667eea;
+            border-radius: 50%;
+            width: 50px;
+            height: 50px;
+            animation: spin 1s linear infinite;
+            margin: 0 auto 15px;
+        }
+
+        @keyframes spin {
+            0% { transform: rotate(0deg); }
+            100% { transform: rotate(360deg); }
+        }
+
+        .status {
+            margin-top: 25px;
+            padding: 18px;
+            border-radius: 12px;
+            text-align: center;
+            display: none;
+            font-weight: 500;
+        }
+
+        .status.info {
+            background: rgba(33, 150, 243, 0.1);
+            color: #2196F3;
+            display: block;
+        }
+
+        .status.success {
+            background: rgba(76, 175, 80, 0.1);
+            color: var(--success);
+            display: block;
+        }
+
+        .status.error {
+            background: rgba(244, 67, 54, 0.1);
+            color: var(--error);
+            display: block;
+        }
+
+        .download-info {
+            display: none;
+            margin-top: 30px;
+            padding: 25px;
+            background: linear-gradient(135deg, rgba(76, 175, 80, 0.1) 0%, rgba(56, 142, 60, 0.1) 100%);
+            border-radius: 15px;
+            border: 2px solid rgba(76, 175, 80, 0.3);
+        }
+
+        .download-info.active {
+            display: block;
+        }
+
+        .download-info h3 {
+            margin-bottom: 15px;
+            color: var(--success);
+            font-size: 20px;
+        }
+
+        .download-info p {
+            margin: 8px 0;
+            font-size: 14px;
+        }
+
+        .download-info strong {
+            font-weight: 600;
+        }
+
+        .download-file-btn {
+            margin-top: 20px;
+            width: 100%;
+            padding: 15px;
+            background: var(--success);
+            color: white;
+            border: none;
+            border-radius: 12px;
+            font-size: 16px;
+            font-weight: 600;
+            cursor: pointer;
+            transition: all 0.3s ease;
+            text-decoration: none;
+            display: inline-block;
+            text-align: center;
+        }
+
+        .download-file-btn:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 5px 20px rgba(76, 175, 80, 0.4);
+        }
+
+        .features {
+            margin-top: 50px;
+            padding-top: 40px;
+            border-top: 1px solid var(--border-light);
+        }
+
+        body.dark-mode .features {
+            border-top-color: var(--border-dark);
+        }
+
+        .features h2 {
+            text-align: center;
+            margin-bottom: 30px;
+            font-size: 24px;
+        }
+
+        .features-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
+            gap: 20px;
+        }
+
+        .feature-card {
+            text-align: center;
+            padding: 20px;
+            border-radius: 15px;
+            background: linear-gradient(135deg, rgba(102, 126, 234, 0.05) 0%, rgba(118, 75, 162, 0.05) 100%);
+            transition: transform 0.3s ease;
+        }
+
+        .feature-card:hover {
+            transform: translateY(-5px);
+        }
+
+        .feature-icon {
+            font-size: 32px;
+            margin-bottom: 10px;
+        }
+
+        .feature-text {
+            font-size: 14px;
+            font-weight: 500;
+        }
+
+        .footer {
+            text-align: center;
+            margin-top: 50px;
+            padding-top: 30px;
+            color: rgba(255, 255, 255, 0.8);
+            font-size: 13px;
+        }
+
+        .ad-container {
+            margin: 30px auto;
+            text-align: center;
+            min-height: 100px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+
+        @media (max-width: 768px) {
+            .container {
+                padding: 35px 25px;
+            }
+
+            h1 {
+                font-size: 28px;
+            }
+
+            .header {
+                justify-content: center;
+            }
+
+            .features-grid {
+                grid-template-columns: repeat(2, 1fr);
+            }
+        }
+
+        @media (max-width: 480px) {
+            .platforms {
+                gap: 8px;
+            }
+
+            .platform-badge {
+                padding: 8px 14px;
+                font-size: 12px;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="header">
+        <div></div>
+        <div class="header-controls">
+            <button class="dark-mode-toggle" id="darkModeToggle">🌙</button>
+
+            <div class="language-selector">
+                <button class="lang-button" id="langButton">
+                    <span id="currentLangFlag">{{ languages|selectattr('code', 'equalto', current_lang)|map(attribute='flag')|first }}</span>
+                    <span id="currentLangName">{{ languages|selectattr('code', 'equalto', current_lang)|map(attribute='name')|first }}</span>
+                    <span>▼</span>
+                </button>
+                <div class="lang-dropdown" id="langDropdown">
+                    {% for lang in languages %}
+                    <div class="lang-option {% if lang.code == current_lang %}selected{% endif %}" data-lang="{{ lang.code }}">
+                        <span>{{ lang.flag }}</span>
+                        <span>{{ lang.name }}</span>
+                    </div>
+                    {% endfor %}
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="container">
+        <h1>{{ translations.title }}</h1>
+        <p class="subtitle">{{ translations.subtitle }}</p>
+        <p class="description">{{ translations.description }}</p>
+
+        <div class="platforms">
+            <span class="platform-badge">📹 {{ translations.platforms.youtube }}</span>
+            <span class="platform-badge">🎵 {{ translations.platforms.tiktok }}</span>
+            <span class="platform-badge">🎭 {{ translations.platforms.douyin }}</span>
+            <span class="platform-badge">🧵 {{ translations.platforms.threads }}</span>
+        </div>
+
+        <div class="ad-container">
+            <ins class="adsbygoogle"
+                 style="display:block"
+                 data-ad-client="ca-pub-XXXXXXXXXXXXXXXX"
+                 data-ad-slot="XXXXXXXXXX"
+                 data-ad-format="auto"
+                 data-full-width-responsive="true"></ins>
+            <script>
+                (adsbygoogle = window.adsbygoogle || []).push({});
+            </script>
+        </div>
+
+        <form id="downloadForm">
+            <div class="input-group">
+                <label for="videoUrl">{{ translations.url_label }}</label>
+                <input
+                    type="text"
+                    id="videoUrl"
+                    name="url"
+                    placeholder="{{ translations.url_placeholder }}"
+                    required
+                >
+            </div>
+
+            <button type="submit" class="download-btn" id="downloadBtn">
+                {{ translations.download_button }}
+            </button>
+        </form>
+
+        <div class="loading" id="loading">
+            <div class="spinner"></div>
+            <p>{{ translations.downloading }}</p>
+        </div>
+
+        <div class="status" id="status"></div>
+
+        <div class="download-info" id="downloadInfo">
+            <h3>{{ translations.download_ready }}</h3>
+            <p><strong>{{ translations.platform }}:</strong> <span id="platform"></span></p>
+            <p><strong>{{ translations.filename }}:</strong> <span id="filename"></span></p>
+            <p><strong>{{ translations.filesize }}:</strong> <span id="filesize"></span></p>
+            <a id="downloadLink" href="#" target="_blank" class="download-file-btn">
+                📥 {{ translations.download_file }}
+            </a>
+        </div>
+
+        <div class="features">
+            <h2>{{ translations.features_title }}</h2>
+            <div class="features-grid">
+                <div class="feature-card">
+                    <div class="feature-icon">✨</div>
+                    <div class="feature-text">{{ translations.feature_free }}</div>
+                </div>
+                <div class="feature-card">
+                    <div class="feature-icon">⚡</div>
+                    <div class="feature-text">{{ translations.feature_fast }}</div>
+                </div>
+                <div class="feature-card">
+                    <div class="feature-icon">🎬</div>
+                    <div class="feature-text">{{ translations.feature_quality }}</div>
+                </div>
+                <div class="feature-card">
+                    <div class="feature-icon">🔒</div>
+                    <div class="feature-text">{{ translations.feature_safe }}</div>
+                </div>
+            </div>
+        </div>
+
+        <div class="ad-container">
+            <ins class="adsbygoogle"
+                 style="display:block"
+                 data-ad-client="ca-pub-XXXXXXXXXXXXXXXX"
+                 data-ad-slot="YYYYYYYYYY"
+                 data-ad-format="auto"
+                 data-full-width-responsive="true"></ins>
+            <script>
+                (adsbygoogle = window.adsbygoogle || []).push({});
+            </script>
+        </div>
+    </div>
+
+    <div class="footer">
+        {{ translations.footer }}
+    </div>
+
+    <script>
+        let currentLang = "{{ current_lang }}";
+        let translations = {{ translations|tojson }};
+
+        const form = document.getElementById('downloadForm');
+        const downloadBtn = document.getElementById('downloadBtn');
+        const loading = document.getElementById('loading');
+        const status = document.getElementById('status');
+        const downloadInfo = document.getElementById('downloadInfo');
+        const urlInput = document.getElementById('videoUrl');
+        const langButton = document.getElementById('langButton');
+        const langDropdown = document.getElementById('langDropdown');
+        const darkModeToggle = document.getElementById('darkModeToggle');
+
+        const savedDarkMode = localStorage.getItem('darkMode') === 'true';
+        if (savedDarkMode) {
+            document.body.classList.add('dark-mode');
+            darkModeToggle.textContent = '☀️';
+        }
+
+        darkModeToggle.addEventListener('click', () => {
+            document.body.classList.toggle('dark-mode');
+            const isDark = document.body.classList.contains('dark-mode');
+            darkModeToggle.textContent = isDark ? '☀️' : '🌙';
+            localStorage.setItem('darkMode', isDark);
+        });
+
+        langButton.addEventListener('click', (e) => {
+            e.stopPropagation();
+            langDropdown.classList.toggle('active');
+        });
+
+        document.addEventListener('click', (e) => {
+            if (!langButton.contains(e.target) && !langDropdown.contains(e.target)) {
+                langDropdown.classList.remove('active');
+            }
+        });
+
+        document.querySelectorAll('.lang-option').forEach(option => {
+            option.addEventListener('click', async () => {
+                const lang = option.dataset.lang;
+
+                try {
+                    await fetch('/api/set-language', {
+                        method: 'POST',
+                        headers: {
+                            'Content-Type': 'application/json',
+                        },
+                        body: JSON.stringify({ lang }),
+                    });
+
+                    window.location.reload();
+                } catch (error) {
+                    console.error('Error setting language:', error);
+                }
+            });
+        });
+
+        form.addEventListener('submit', async (e) => {
+            e.preventDefault();
+
+            const url = urlInput.value.trim();
+
+            if (!url) {
+                showStatus(translations.error_url_required || 'Please enter a URL', 'error');
+                return;
+            }
+
+            downloadBtn.disabled = true;
+            loading.classList.add('active');
+            status.style.display = 'none';
+            downloadInfo.classList.remove('active');
+
+            try {
+                const response = await fetch('/api/download', {
+                    method: 'POST',
+                    headers: {
+                        'Content-Type': 'application/json',
+                    },
+                    body: JSON.stringify({ url }),
+                });
+
+                const data = await response.json();
+
+                if (!response.ok) {
+                    throw new Error(data.error || translations.error_download_failed || 'Download failed');
+                }
+
+                showStatus(translations.success_message || 'Download successful!', 'success');
+                showDownloadInfo(data);
+
+            } catch (error) {
+                showStatus(`${translations.error_download_failed || 'Error'}: ${error.message}`, 'error');
+            } finally {
+                loading.classList.remove('active');
+                downloadBtn.disabled = false;
+            }
+        });
+
+        function showStatus(message, type) {
+            status.textContent = message;
+            status.className = 'status ' + type;
+        }
+
+        function showDownloadInfo(data) {
+            document.getElementById('platform').textContent = data.platform.toUpperCase();
+            document.getElementById('filename').textContent = data.filename;
+            document.getElementById('filesize').textContent = formatFileSize(data.size);
+            document.getElementById('downloadLink').href = data.download_url;
+            downloadInfo.classList.add('active');
+        }
+
+        function formatFileSize(bytes) {
+            if (bytes < 1024) return bytes + ' B';
+            if (bytes < 1024 * 1024) return (bytes / 1024).toFixed(2) + ' KB';
+            if (bytes < 1024 * 1024 * 1024) return (bytes / 1024 / 1024).toFixed(2) + ' MB';
+            return (bytes / 1024 / 1024 / 1024).toFixed(2) + ' GB';
+        }
+
+        urlInput.focus();
+    </script>
+</body>
+</html>

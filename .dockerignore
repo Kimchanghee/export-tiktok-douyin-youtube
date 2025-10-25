@@ -1,0 +1,60 @@
+# Python
+__pycache__/
+*.py[cod]
+*$py.class
+*.so
+.Python
+env/
+venv/
+ENV/
+*.egg-info/
+dist/
+build/
+
+# IDEs
+.vscode/
+.idea/
+*.swp
+*.swo
+*~
+
+# OS
+.DS_Store
+Thumbs.db
+
+# Git
+.git/
+.gitignore
+.gitattributes
+
+# Test files
+test_*.py
+*_test.py
+
+# Build files
+*.exe
+*.spec
+build.bat
+build_exe.py
+
+# Documentation
+README*.md
+*.txt
+사용방법.txt
+
+# Claude
+.claude/
+
+# Unnecessary files
+icon.ico
+icon.png
+create_icon.py
+main.py
+run.bat
+threads_*.json
+threads_*.txt
+threads_*.png
+jina_*.txt
+instagram_*.html
+mobile_*.html
+oembed_*.json

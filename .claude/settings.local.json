@@ -1,0 +1,36 @@
+{
+  "permissions": {
+    "allow": [
+      "Bash(python downloader.py:*)",
+      "Bash(python main.py:*)",
+      "Bash(python create_icon.py:*)",
+      "Bash(python test_threads.py:*)",
+      "Bash(python test_threads_debug.py:*)",
+      "Bash(python:*)",
+      "Bash(yt-dlp:*)",
+      "Bash(pip install:*)",
+      "Bash(gallery-dl:*)",
+      "Bash(for i in 1 2 3)",
+      "Bash(do echo \"=== Test $i/3 ===\")",
+      "Bash(done)",
+      "Bash(pip uninstall:*)",
+      "Bash(pyinstaller:*)",
+      "Bash(controller --add-data=common:*)",
+      "Bash(common:*)",
+      "Bash(Select-String -Pattern \"Building|Completed|ERROR|WARNING\")",
+      "Bash(Select-Object -Last 30)",
+      "Bash(pip cache:*)",
+      "Bash(dir \"C:\\Users\\HOME\\AppData\\Local\\Programs\\Python\\Python313\\Lib\\site-packages\\altgraph\\__init__.py\")",
+      "Read(//c/Users/HOME/AppData/Local/Programs/Python/Python313/Lib/site-packages/altgraph/**)",
+      "Bash(dir \"c:\\Users\\HOME\\Documents\\GitHub\\export-tiktok-douyin-youtube\\dist\\VideoDownloader.exe\")",
+      "Bash(powershell -Command \"(Get-Item ''c:\\Users\\HOME\\Documents\\GitHub\\export-tiktok-douyin-youtube\\dist\\VideoDownloader.exe'').Length / 1MB\")",
+      "Bash(powershell -Command:*)",
+      "Bash(Select-String -Pattern \"Downloading|ERROR|Merging|100%\")",
+      "Bash(Select-Object -Last 10)",
+      "Bash(PORT=8081 python:*)",
+      "Bash(curl:*)"
+    ],
+    "deny": [],
+    "ask": []
+  }
+}

@@ -1,0 +1,12 @@
+# Video Downloader Requirements
+# TikTok, Douyin, YouTube, Threads 다운로더 필수 패키지
+
+# YouTube 다운로드
+yt-dlp>=2024.0.0
+
+# Threads 다운로드
+requests>=2.31.0
+selenium>=4.0.0
+
+# 아이콘 생성 (선택사항)
+# Pillow>=10.0.0
