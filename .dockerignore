@@ -7,6 +7,7 @@ __pycache__/
 env/
 venv/
 ENV/
+.venv
 *.egg-info/
 dist/
 build/
@@ -21,6 +22,7 @@ build/
 # OS
 .DS_Store
 Thumbs.db
+desktop.ini
 
 # Git
 .git/
@@ -30,6 +32,10 @@ Thumbs.db
 # Test files
 test_*.py
 *_test.py
+test_downloads/
+*.mp4
+*.webm
+*.mkv
 
 # Build files
 *.exe
@@ -41,16 +47,21 @@ build_exe.py
 README*.md
 *.txt
 사용방법.txt
+WEB_APP_GUIDE_*.md
+QUICK_START.md
+DEPLOYMENT.md
 
 # Claude
 .claude/
 
-# Unnecessary files
+# Desktop app files (not needed for web)
 icon.ico
 icon.png
 create_icon.py
 main.py
 run.bat
+
+# Temporary/test files
 threads_*.json
 threads_*.txt
 threads_*.png
@@ -58,3 +69,26 @@ jina_*.txt
 instagram_*.html
 mobile_*.html
 oembed_*.json
+
+# Docker
+Dockerfile
+.dockerignore
+docker-compose.yml
+
+# CI/CD
+.github/
+.gitlab-ci.yml
+
+# Logs
+*.log
+logs/
+
+# Environment
+.env
+.env.*
+!.env.example
+
+# Cache
+.cache/
+*.tmp
+*.temp
