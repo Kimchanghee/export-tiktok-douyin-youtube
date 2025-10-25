@@ -1,0 +1,27 @@
+{
+  "enabled": false,
+  "client_id": "ca-pub-XXXXXXXXXXXXXXXX",
+  "slots": {
+    "top": {
+      "enabled": true,
+      "slot_id": "1234567890",
+      "format": "auto",
+      "full_width_responsive": true,
+      "style": "display:block"
+    },
+    "bottom": {
+      "enabled": true,
+      "slot_id": "0987654321",
+      "format": "auto",
+      "full_width_responsive": true,
+      "style": "display:block"
+    },
+    "sidebar": {
+      "enabled": false,
+      "slot_id": "1122334455",
+      "format": "auto",
+      "full_width_responsive": true,
+      "style": "display:block"
+    }
+  }
+}

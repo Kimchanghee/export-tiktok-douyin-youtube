@@ -25,6 +25,7 @@ app.config['MAX_CONTENT_LENGTH'] = 500 * 1024 * 1024  # 500MB max
 app.config['DOWNLOAD_FOLDER'] = '/tmp/downloads' if os.name != 'nt' else os.path.join(os.environ.get('TEMP', 'C:\\temp'), 'downloads')
 app.config['SECRET_KEY'] = os.environ.get('SECRET_KEY', 'dev-secret-key-change-in-production')
 app.config['LOCALES_FOLDER'] = os.path.join(os.path.dirname(__file__), 'locales')
+app.config['CONFIG_FOLDER'] = os.path.join(os.path.dirname(__file__), 'config')
 
 # Create download folder
 os.makedirs(app.config['DOWNLOAD_FOLDER'], exist_ok=True)
@@ -55,8 +56,29 @@ SUPPORTED_LANGUAGES = [
 
 DEFAULT_LANGUAGE = 'en'
 
-# Cache for translations
+# Cache for translations and configs
 translations_cache = {}
+config_cache = {}
+
+def load_config(config_name):
+    """Load configuration file"""
+    if config_name in config_cache:
+        return config_cache[config_name]
+
+    config_file = os.path.join(app.config['CONFIG_FOLDER'], f'{config_name}.json')
+
+    if not os.path.exists(config_file):
+        print(f"Config file not found: {config_file}")
+        return {}
+
+    try:
+        with open(config_file, 'r', encoding='utf-8') as f:
+            config = json.load(f)
+            config_cache[config_name] = config
+            return config
+    except Exception as e:
+        print(f"Error loading config {config_name}: {e}")
+        return {}
 
 def load_translation(lang_code):
     """Load translation file for given language"""
@@ -147,12 +169,16 @@ def index():
     """Main page"""
     lang = get_user_language()
     translations = load_translation(lang)
+    adsense_config = load_config('adsense')
+    analytics_config = load_config('analytics')
 
     return render_template(
         'index.html',
         translations=translations,
         languages=SUPPORTED_LANGUAGES,
-        current_lang=lang
+        current_lang=lang,
+        adsense=adsense_config,
+        analytics=analytics_config
     )
 
 @app.route('/api/set-language', methods=['POST'])

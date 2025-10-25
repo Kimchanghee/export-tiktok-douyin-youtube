@@ -1,0 +1,14 @@
+{
+  "enabled": false,
+  "tracking_id": "G-XXXXXXXXXX",
+  "settings": {
+    "anonymize_ip": true,
+    "cookie_expires": 63072000,
+    "send_page_view": true
+  },
+  "events": {
+    "track_downloads": true,
+    "track_language_change": true,
+    "track_errors": true
+  }
+}
