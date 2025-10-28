@@ -7,20 +7,15 @@
     <meta name="keywords" content="video downloader, tiktok, youtube, douyin, threads, download video, free">
     <title>{{ translations.title }} - {{ translations.subtitle }}</title>
 
-    {% if analytics.enabled %}
-    <!-- Google Analytics -->
-    <script async src="https://www.googletagmanager.com/gtag/js?id={{ analytics.tracking_id }}"></script>
+    <!-- Google tag (gtag.js) -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=G-DT21HQLJ51"></script>
     <script>
         window.dataLayer = window.dataLayer || [];
         function gtag(){dataLayer.push(arguments);}
         gtag('js', new Date());
-        gtag('config', '{{ analytics.tracking_id }}', {
-            {% if analytics.settings.anonymize_ip %}'anonymize_ip': true,{% endif %}
-            {% if analytics.settings.cookie_expires %}'cookie_expires': {{ analytics.settings.cookie_expires }},{% endif %}
-            {% if analytics.settings.send_page_view %}'send_page_view': true{% endif %}
-        });
+
+        gtag('config', 'G-DT21HQLJ51');
     </script>
-    {% endif %}
 
     {% if adsense.enabled %}
     <!-- Google AdSense -->
