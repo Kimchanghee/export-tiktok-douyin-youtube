@@ -71,7 +71,6 @@ mobile_*.html
 oembed_*.json
 
 # Docker
-Dockerfile
 .dockerignore
 docker-compose.yml
 
