@@ -341,6 +341,14 @@ def robots():
         mimetype='text/plain'
     )
 
+@app.route('/ads.txt')
+def ads():
+    """Serve ads.txt for Google AdSense verification"""
+    return send_file(
+        os.path.join(os.path.dirname(__file__), 'static', 'ads.txt'),
+        mimetype='text/plain'
+    )
+
 @app.route('/sitemap.xml')
 def sitemap():
     """Generate dynamic sitemap.xml"""
