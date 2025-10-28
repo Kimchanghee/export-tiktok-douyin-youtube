@@ -17,13 +17,31 @@ RUN pip install --no-cache-dir --user yt-dlp
 # Final production stage
 FROM python:3.11-slim
 
-# Install runtime dependencies
-RUN apt-get update && apt-get install -y \
-    chromium \
-    chromium-driver \
+# Install runtime dependencies and Chromium
+RUN apt-get update && apt-get install -y --no-install-recommends \
+    wget \
+    gnupg \
+    ca-certificates \
+    procps \
     ffmpeg \
     curl \
+    unzip \
+    chromium \
     && rm -rf /var/lib/apt/lists/*
+
+# Download and install ChromeDriver
+RUN wget -q https://googlechromelabs.github.io/chrome-for-testing/last-known-good-versions-with-downloads.json -O /tmp/versions.json && \
+    CHROMEDRIVER_URL=$(grep -o 'https://[^"]*chromedriver-linux64.zip' /tmp/versions.json | head -1) && \
+    if [ -n "$CHROMEDRIVER_URL" ]; then \
+        wget -q "$CHROMEDRIVER_URL" -O /tmp/chromedriver.zip && \
+        unzip -o /tmp/chromedriver.zip -d /tmp/ && \
+        mv /tmp/chromedriver-linux64/chromedriver /usr/bin/chromedriver && \
+        chmod +x /usr/bin/chromedriver; \
+    fi && \
+    rm -rf /tmp/chromedriver* /tmp/versions.json
+
+# Set up Chromium to work in containers
+ENV CHROME_BIN=/usr/bin/chromium
 
 # Create non-root user for security
 RUN useradd -m -u 1000 appuser
