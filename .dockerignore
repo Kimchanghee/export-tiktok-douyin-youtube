@@ -45,11 +45,15 @@ build_exe.py
 
 # Documentation
 README*.md
-*.txt
 사용방법.txt
 WEB_APP_GUIDE_*.md
 QUICK_START.md
 DEPLOYMENT.md
+
+# Exclude text files except requirements.txt
+*.txt
+!requirements.txt
+!web/requirements.txt
 
 # Claude
 .claude/
