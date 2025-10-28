@@ -1,8 +1,8 @@
 {
   "adsense": {
-    "enabled": false,
-    "client_id": "ca-pub-XXXXXXXXXXXXXXXX",
-    "auto_ads": false,
+    "enabled": true,
+    "client_id": "ca-pub-5884595045902078",
+    "auto_ads": true,
     "slots": {
       "header_banner": {
         "enabled": true,
