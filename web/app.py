@@ -10,7 +10,7 @@ import uuid
 import json
 import shutil
 from pathlib import Path
-from flask import Flask, render_template, request, jsonify, send_file, session
+from flask import Flask, render_template, request, jsonify, send_file, session, Response
 from werkzeug.utils import secure_filename
 
 # Add parent directory to path for imports
@@ -69,7 +69,7 @@ def load_config(config_name):
 
     if not os.path.exists(config_file):
         print(f"Config file not found: {config_file}")
-        return {}
+        return {{}}
 
     try:
         with open(config_file, 'r', encoding='utf-8') as f:
@@ -78,7 +78,7 @@ def load_config(config_name):
             return config
     except Exception as e:
         print(f"Error loading config {config_name}: {e}")
-        return {}
+        return {{}}
 
 def load_translation(lang_code):
     """Load translation file for given language"""
@@ -99,7 +99,7 @@ def load_translation(lang_code):
             return translations
     except Exception as e:
         print(f"Error loading translation {lang_code}: {e}")
-        return {}
+        return {{}}
 
 def get_user_language():
     """Get user's preferred language from session or browser"""
@@ -130,7 +130,7 @@ def detect_platform(url):
 def download_youtube_video(url, output_dir):
     """Download YouTube video using yt-dlp"""
     try:
-        output_template = os.path.join(output_dir, "%(title)s_%(id)s.%(ext)s")
+        output_template = os.path.join(output_dir, "% (title)s_%(id)s.%(ext)s")
 
         cmd = [
             "yt-dlp",
@@ -340,8 +340,6 @@ def robots():
         os.path.join(os.path.dirname(__file__), 'static', 'robots.txt'),
         mimetype='text/plain'
     )
-
-from flask import Response
 
 @app.route('/ads.txt')
 def ads():
