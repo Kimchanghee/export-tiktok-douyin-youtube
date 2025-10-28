@@ -46,6 +46,7 @@ build_exe.py
 # Documentation
 README*.md
 *.txt
+!web/requirements.txt
 사용방법.txt
 WEB_APP_GUIDE_*.md
 QUICK_START.md

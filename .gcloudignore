@@ -28,6 +28,7 @@ tests/
 # Documentation
 README*.md
 *.txt
+!web/requirements.txt
 사용방법.txt
 DEPLOYMENT.md
 
