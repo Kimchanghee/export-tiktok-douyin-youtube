@@ -200,15 +200,5 @@
 </script>
 
 <!-- Google AdSense -->
-{% if ads.adsense.enabled %}
-<script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client={{ ads.adsense.client_id }}"
+<script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-5884595045902078"
      crossorigin="anonymous"></script>
-{% if ads.adsense.auto_ads %}
-<script>
-  (adsbygoogle = window.adsbygoogle || []).push({
-    google_ad_client: "{{ ads.adsense.client_id }}",
-    enable_page_level_ads: true
-  });
-</script>
-{% endif %}
-{% endif %}
