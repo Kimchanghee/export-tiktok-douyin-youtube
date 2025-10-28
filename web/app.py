@@ -341,13 +341,20 @@ def robots():
         mimetype='text/plain'
     )
 
+from flask import Response
+
 @app.route('/ads.txt')
 def ads():
     """Serve ads.txt for Google AdSense verification"""
-    return send_file(
-        os.path.join(os.path.dirname(__file__), 'static', 'ads.txt'),
-        mimetype='text/plain'
-    )
+    ads_txt_path = os.path.join(os.path.dirname(__file__), 'static', 'ads.txt')
+    try:
+        with open(ads_txt_path, 'r', encoding='utf-8') as f:
+            content = f.read()
+        return Response(content, mimetype='text/plain')
+    except FileNotFoundError:
+        # For debugging, you might want to log this error
+        print(f"ads.txt not found at {ads_txt_path}")
+        return Response("Not Found", status=404, mimetype='text/plain')
 
 @app.route('/sitemap.xml')
 def sitemap():
