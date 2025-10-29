@@ -360,8 +360,9 @@ def _download_via_selenium(
         chrome_options.add_argument("user-agent=Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36")
 
         driver = webdriver.Chrome(options=chrome_options)
+        driver.set_page_load_timeout(15)  # 15 second timeout
         driver.get(canonical_url)
-        time.sleep(5)  # Wait for page load
+        time.sleep(3)  # Reduced wait time
 
         # Try to find video element
         video_elements = driver.find_elements(By.TAG_NAME, "video")
@@ -472,12 +473,12 @@ def download_threads_video(url: str, output_dir: Optional[str] = None) -> str:
             continue
 
     if not graph_payload:
-        # Try Selenium first, then Jina
+        # Try Jina first (faster), then Selenium as last resort
         try:
-            return _download_via_selenium(canonical_url, shortcode, output_dir)
+            return _download_via_jina(canonical_url, shortcode, output_dir)
         except ThreadsDownloadError:
             try:
-                return _download_via_jina(canonical_url, shortcode, output_dir)
+                return _download_via_selenium(canonical_url, shortcode, output_dir)
             except ThreadsDownloadError:
                 if last_error:
                     raise ThreadsDownloadError(str(last_error))
@@ -485,11 +486,11 @@ def download_threads_video(url: str, output_dir: Optional[str] = None) -> str:
 
     video_url = _pick_best_video_url(graph_payload)
     if not video_url:
-        # Try Selenium first, then Jina
+        # Try Jina first (faster), then Selenium as last resort
         try:
-            return _download_via_selenium(canonical_url, shortcode, output_dir)
-        except ThreadsDownloadError:
             return _download_via_jina(canonical_url, shortcode, output_dir)
+        except ThreadsDownloadError:
+            return _download_via_selenium(canonical_url, shortcode, output_dir)
 
     return _download_and_save(video_url, shortcode, output_dir, ".mp4", session=session)
 
