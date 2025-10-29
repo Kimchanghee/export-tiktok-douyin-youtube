@@ -28,7 +28,11 @@
       "Bash(Select-String -Pattern \"Downloading|ERROR|Merging|100%\")",
       "Bash(Select-Object -Last 10)",
       "Bash(PORT=8081 python:*)",
-      "Bash(curl:*)"
+      "Bash(curl:*)",
+      "Bash(dir:*)",
+      "Bash(ffmpeg:*)",
+      "Bash(where:*)",
+      "Bash(move \"C:\\Users\\HOME\\AppData\\Local\\Temp\\tiktok_douyin_twrc7757\\douyin_video_20251029_131353.mp4\" \"test_downloads\\douyin_video.mp4\")"
     ],
     "deny": [],
     "ask": []

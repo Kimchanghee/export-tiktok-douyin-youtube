@@ -130,7 +130,7 @@ def detect_platform(url):
 def download_youtube_video(url, output_dir):
     """Download YouTube video using yt-dlp"""
     try:
-        output_template = os.path.join(output_dir, "% (title)s_%(id)s.%(ext)s")
+        output_template = os.path.join(output_dir, "%(title)s_%(id)s.%(ext)s")
 
         cmd = [
             "yt-dlp",
@@ -138,22 +138,49 @@ def download_youtube_video(url, output_dir):
             "-o", output_template,
             "--no-playlist",
             "--merge-output-format", "mp4",
+            "--restrict-filenames",
             url
         ]
 
         result = subprocess.run(
             cmd,
-            capture_output=True,
-            text=True,
+            stdout=subprocess.PIPE,
+            stderr=subprocess.PIPE,
             timeout=300
         )
 
+        stdout_str = result.stdout.decode('utf-8', errors='replace')
+        stderr_str = result.stderr.decode('utf-8', errors='replace')
+
         if result.returncode == 0:
-            # Find the downloaded file
+            # Try to find the filename from yt-dlp's output
+            import re
+            output_lines = stdout_str.splitlines()
+            for line in output_lines:
+                if "[Merger] Merging formats into" in line:
+                    match = re.search(r'Merging formats into "(.*)"', line)
+                    if match:
+                        return match.group(1)
+                elif "[download] Destination:" in line:
+                    match = re.search(r'Destination: (.*)', line)
+                    if match:
+                        return match.group(1)
+
+            # Fallback for already downloaded files
+            for line in output_lines:
+                if "[download]" in line and "has already been downloaded" in line:
+                    match = re.search(r'\[download\] (.*) has already been downloaded', line)
+                    if match:
+                        return os.path.join(output_dir, match.group(1))
+
+            # Fallback to glob if parsing fails
             import glob
             files = glob.glob(os.path.join(output_dir, "*.mp4"))
             if files:
                 return max(files, key=os.path.getctime)
+        else:
+            print(f"yt-dlp stdout: {result.stdout}")
+            print(f"yt-dlp stderr: {result.stderr}")
 
         return None
 
