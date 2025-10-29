@@ -32,7 +32,12 @@
       "Bash(dir:*)",
       "Bash(ffmpeg:*)",
       "Bash(where:*)",
-      "Bash(move \"C:\\Users\\HOME\\AppData\\Local\\Temp\\tiktok_douyin_twrc7757\\douyin_video_20251029_131353.mp4\" \"test_downloads\\douyin_video.mp4\")"
+      "Bash(move \"C:\\Users\\HOME\\AppData\\Local\\Temp\\tiktok_douyin_twrc7757\\douyin_video_20251029_131353.mp4\" \"test_downloads\\douyin_video.mp4\")",
+      "Bash(gcloud run services logs read:*)",
+      "Bash(gcloud run services logs tail:*)",
+      "Bash(git add:*)",
+      "Bash(git commit:*)",
+      "Bash(git push:*)"
     ],
     "deny": [],
     "ask": []
