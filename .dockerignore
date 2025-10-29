@@ -1,105 +1,12 @@
-# Python
-__pycache__/
-*.py[cod]
-*$py.class
-*.so
-.Python
-env/
-venv/
-ENV/
-.venv
-*.egg-info/
-dist/
-build/
-
-# IDEs
-.vscode/
-.idea/
-*.swp
-*.swo
-*~
-
-# OS
-.DS_Store
-Thumbs.db
-desktop.ini
-
-# Git
-.git/
+# Keep Docker context lean but include application sources
+.git
 .gitignore
-.gitattributes
-
-# Test files
-test_*.py
-*_test.py
-test_downloads/
-*.mp4
-*.webm
-*.mkv
-
-# Build files
-*.exe
-*.spec
-build.bat
-build_exe.py
-
-# Documentation
-README*.md
-사용방법.txt
-WEB_APP_GUIDE_*.md
-QUICK_START.md
-DEPLOYMENT.md
-
-# Exclude text files except requirements.txt and static files
-*.txt
-!requirements.txt
-!web/requirements.txt
-!web/static/ads.txt
-!web/static/robots.txt
-
-# Claude
-.claude/
-
-# Desktop app files (not needed for web)
-icon.ico
-icon.png
-create_icon.py
-main.py
-run.bat
-
-# Temporary/test files
-threads_*.json
-threads_*.txt
-threads_*.png
-jina_*.txt
-instagram_*.html
-mobile_*.html
-oembed_*.json
-
-# Docker
-Dockerfile
-.dockerignore
-docker-compose.yml
-
-# CI/CD
-.github/
-.gitlab-ci.yml
-
-# Logs
+.gcloudignore
+__pycache__/
+*.pyc
+*.pyo
+*.pyd
 *.log
-logs/
-
-# Environment
-.env
-.env.*
-!.env.example
-
-# Ensure application code is available during Docker builds
-!web/**
-!controller/**
-!common/**
-
-# Cache
-.cache/
 *.tmp
 *.temp
+test_downloads/
