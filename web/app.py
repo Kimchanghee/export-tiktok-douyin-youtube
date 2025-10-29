@@ -9,6 +9,7 @@ import sys
 import uuid
 import json
 import shutil
+from typing import Optional
 from pathlib import Path
 from flask import Flask, render_template, request, jsonify, send_file, session, Response
 from werkzeug.utils import secure_filename
@@ -132,6 +133,16 @@ def download_youtube_video(url, output_dir):
     try:
         output_template = os.path.join(output_dir, "%(title)s_%(id)s.%(ext)s")
 
+        def _resolve_path(candidate: str) -> Optional[str]:
+            if not candidate:
+                return None
+            candidate = candidate.strip().strip('"').strip("'")
+            if not candidate:
+                return None
+            if not os.path.isabs(candidate):
+                candidate = os.path.join(output_dir, candidate)
+            return os.path.abspath(candidate)
+
         # Use simpler format that doesn't require ffmpeg merge
         cmd = [
             "yt-dlp",
@@ -168,31 +179,35 @@ def download_youtube_video(url, output_dir):
                 if "[Merger] Merging formats into" in line:
                     match = re.search(r'Merging formats into "(.*)"', line)
                     if match:
-                        return match.group(1)
+                        resolved = _resolve_path(match.group(1))
+                        if resolved and os.path.exists(resolved):
+                            return resolved
                 elif "[download] Destination:" in line:
                     match = re.search(r'Destination: (.*)', line)
                     if match:
-                        filepath = match.group(1).strip()
-                        if os.path.exists(filepath):
-                            return filepath
+                        resolved = _resolve_path(match.group(1))
+                        if resolved and os.path.exists(resolved):
+                            return resolved
 
             # Fallback for already downloaded files
             for line in output_lines:
                 if "[download]" in line and "has already been downloaded" in line:
                     match = re.search(r'\[download\] (.*) has already been downloaded', line)
                     if match:
-                        return os.path.join(output_dir, match.group(1))
+                        resolved = _resolve_path(match.group(1))
+                        if resolved and os.path.exists(resolved):
+                            return resolved
 
             # Fallback to glob if parsing fails
             files = glob.glob(os.path.join(output_dir, "*.mp4"))
             if files:
-                return max(files, key=os.path.getctime)
+                return os.path.abspath(max(files, key=os.path.getctime))
 
             # Last resort: check for any video files
             video_files = glob.glob(os.path.join(output_dir, "*.*"))
             if video_files:
                 print(f"[YouTube] Found files: {video_files}")
-                return max(video_files, key=os.path.getctime)
+                return os.path.abspath(max(video_files, key=os.path.getctime))
         else:
             error_msg = f"yt-dlp failed with code {result.returncode}"
             if stderr_str:
