@@ -132,15 +132,17 @@ def download_youtube_video(url, output_dir):
     try:
         output_template = os.path.join(output_dir, "%(title)s_%(id)s.%(ext)s")
 
+        # Use simpler format that doesn't require ffmpeg merge
         cmd = [
             "yt-dlp",
-            "-f", "bestvideo[ext=mp4]+bestaudio[ext=m4a]/best[ext=mp4]/best",
+            "-f", "best[ext=mp4]/best",
             "-o", output_template,
             "--no-playlist",
-            "--merge-output-format", "mp4",
             "--restrict-filenames",
             url
         ]
+
+        print(f"[YouTube] Running command: {' '.join(cmd)}")
 
         result = subprocess.run(
             cmd,
@@ -152,9 +154,15 @@ def download_youtube_video(url, output_dir):
         stdout_str = result.stdout.decode('utf-8', errors='replace')
         stderr_str = result.stderr.decode('utf-8', errors='replace')
 
+        print(f"[YouTube] Return code: {result.returncode}")
+        print(f"[YouTube] stdout: {stdout_str[:500]}")
+        print(f"[YouTube] stderr: {stderr_str[:500]}")
+
         if result.returncode == 0:
             # Try to find the filename from yt-dlp's output
             import re
+            import glob
+
             output_lines = stdout_str.splitlines()
             for line in output_lines:
                 if "[Merger] Merging formats into" in line:
@@ -164,7 +172,9 @@ def download_youtube_video(url, output_dir):
                 elif "[download] Destination:" in line:
                     match = re.search(r'Destination: (.*)', line)
                     if match:
-                        return match.group(1)
+                        filepath = match.group(1).strip()
+                        if os.path.exists(filepath):
+                            return filepath
 
             # Fallback for already downloaded files
             for line in output_lines:
@@ -174,21 +184,30 @@ def download_youtube_video(url, output_dir):
                         return os.path.join(output_dir, match.group(1))
 
             # Fallback to glob if parsing fails
-            import glob
             files = glob.glob(os.path.join(output_dir, "*.mp4"))
             if files:
                 return max(files, key=os.path.getctime)
+
+            # Last resort: check for any video files
+            video_files = glob.glob(os.path.join(output_dir, "*.*"))
+            if video_files:
+                print(f"[YouTube] Found files: {video_files}")
+                return max(video_files, key=os.path.getctime)
         else:
-            print(f"yt-dlp stdout: {result.stdout}")
-            print(f"yt-dlp stderr: {result.stderr}")
+            error_msg = f"yt-dlp failed with code {result.returncode}"
+            if stderr_str:
+                error_msg += f": {stderr_str[:200]}"
+            print(f"[YouTube] Error: {error_msg}")
+            raise Exception(error_msg)
 
         return None
 
     except subprocess.TimeoutExpired:
-        raise Exception("YouTube download timeout")
+        raise Exception("YouTube download timeout (300s)")
     except FileNotFoundError:
         raise Exception("yt-dlp not installed")
     except Exception as e:
+        print(f"[YouTube] Exception: {str(e)}")
         raise Exception(f"YouTube download failed: {str(e)}")
 
 @app.route('/')
