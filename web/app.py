@@ -319,8 +319,9 @@ def download():
 def download_file(download_id, filename):
     """Download file endpoint"""
     try:
-        # Secure the filename
-        filename = secure_filename(filename)
+        # Sanitize filename without using secure_filename (which can change the name)
+        # Just remove path separators to prevent directory traversal
+        filename = filename.replace('/', '').replace('\\', '').replace('..', '')
         download_dir = os.path.join(app.config['DOWNLOAD_FOLDER'], download_id)
         filepath = os.path.join(download_dir, filename)
 
