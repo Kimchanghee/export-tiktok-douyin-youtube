@@ -94,6 +94,11 @@ logs/
 .env.*
 !.env.example
 
+# Ensure application code is available during Docker builds
+!web/**
+!controller/**
+!common/**
+
 # Cache
 .cache/
 *.tmp
