@@ -5,7 +5,7 @@ steps:
     args:
       - 'build'
       - '-t'
-      - 'gcr.io/$PROJECT_ID/video-downloader:$COMMIT_SHA'
+      - 'gcr.io/$PROJECT_ID/video-downloader:$SHORT_SHA'
       - '-t'
       - 'gcr.io/$PROJECT_ID/video-downloader:latest'
       - '.'
@@ -15,7 +15,7 @@ steps:
   - name: 'gcr.io/cloud-builders/docker'
     args:
       - 'push'
-      - 'gcr.io/$PROJECT_ID/video-downloader:$COMMIT_SHA'
+      - 'gcr.io/$PROJECT_ID/video-downloader:$SHORT_SHA'
 
   - name: 'gcr.io/cloud-builders/docker'
     args:
@@ -30,7 +30,7 @@ steps:
       - 'deploy'
       - 'video-downloader'
       - '--image'
-      - 'gcr.io/$PROJECT_ID/video-downloader:$COMMIT_SHA'
+      - 'gcr.io/$PROJECT_ID/video-downloader:latest'
       - '--region'
       - 'asia-northeast3'  # Seoul region
       - '--platform'
@@ -53,7 +53,7 @@ steps:
 
 # Images to store in Container Registry
 images:
-  - 'gcr.io/$PROJECT_ID/video-downloader:$COMMIT_SHA'
+  - 'gcr.io/$PROJECT_ID/video-downloader:$SHORT_SHA'
   - 'gcr.io/$PROJECT_ID/video-downloader:latest'
 
 # Build timeout
