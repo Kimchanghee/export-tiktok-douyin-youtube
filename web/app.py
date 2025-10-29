@@ -176,18 +176,15 @@ def download_youtube_video(url, output_dir):
             return resolved_abs
 
         # Use simpler format that doesn't require ffmpeg merge
-        # Use multiple fallback strategies to avoid bot detection
+        # Use iOS client which has better bot detection avoidance
         cmd = [
             "yt-dlp",
-            "-f", "best[ext=mp4]/best",
+            "-f", "best[ext=mp4]/bestvideo[ext=mp4]+bestaudio[ext=m4a]/best",
             "-o", output_template,
             "--no-playlist",
             "--restrict-filenames",
-            "--user-agent", "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/120.0.0.0 Safari/537.36",
-            "--extractor-args", "youtube:player_client=android",
-            "--extractor-args", "youtube:player_skip=webpage,configs",
-            "--no-check-certificates",
-            "--sleep-requests", "1",
+            "--extractor-args", "youtube:player_client=ios,web",
+            "--extractor-args", "youtube:skip=dash,hls",
             url
         ]
 
