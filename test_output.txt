@@ -1,3 +1,15 @@
 Attempting to download: https://www.youtube.com/shorts/Fm__4qtSc1g
 Download successful!
-File saved to: c:\Users\HOME\Documents\GitHub\export-tiktok-douyin-youtube\test_downloads\__Fm__4qtSc1g.f399.mp4
+File saved to: D:\export-tiktok-douyin-youtube\test_downloads\youtube\__Fm__4qtSc1g.mp4
+
+Attempting to download: https://youtu.be/He9Uu7ngRks?si=F9f-MIs5GTH0os1N
+Download successful!
+File saved to: D:\export-tiktok-douyin-youtube\test_downloads\youtube\.._2025.10.23_MBC_He9Uu7ngRks.mp4
+
+Attempting to download: https://www.threads.com/@fig080/post/DQGf4IQEomg?xmt=AQF07sE3gWdKiRT-Hus1ABKS6KQ_HRMZIM-8cmfWtoBx7g&slof=1
+Download successful!
+File saved to: D:\export-tiktok-douyin-youtube\test_downloads\threads\threads_DQGf4IQEomg.mp4
+
+Attempting to download: https://v.douyin.com/HsYBBBn3WIU/
+Download successful!
+File saved to: D:\export-tiktok-douyin-youtube\test_downloads\douyin\douyin_video_20251029_191455.mp4
