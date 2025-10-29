@@ -133,6 +133,8 @@ def download_youtube_video(url, output_dir):
     try:
         output_template = os.path.join(output_dir, "%(title)s_%(id)s.%(ext)s")
 
+        output_dir_abs = os.path.abspath(output_dir)
+
         def _resolve_path(candidate: str) -> Optional[str]:
             if not candidate:
                 return None
@@ -142,6 +144,36 @@ def download_youtube_video(url, output_dir):
             if not os.path.isabs(candidate):
                 candidate = os.path.join(output_dir, candidate)
             return os.path.abspath(candidate)
+
+        def _ensure_within_output(resolved: Optional[str]) -> Optional[str]:
+            if not resolved:
+                return None
+            resolved_abs = os.path.abspath(resolved)
+            try:
+                common = os.path.commonpath([output_dir_abs, resolved_abs])
+            except ValueError:
+                common = None
+
+            if common != output_dir_abs:
+                # Move/copy file into the current output directory so the API can serve it.
+                basename = os.path.basename(resolved_abs) or f"video_{uuid.uuid4().hex}.mp4"
+                target = os.path.join(output_dir_abs, basename)
+
+                if os.path.abspath(target) == resolved_abs:
+                    return resolved_abs
+
+                if os.path.exists(target):
+                    base, ext = os.path.splitext(basename)
+                    target = os.path.join(output_dir_abs, f"{base}_{uuid.uuid4().hex[:6]}{ext}")
+
+                try:
+                    shutil.copy2(resolved_abs, target)
+                    resolved_abs = os.path.abspath(target)
+                except Exception as copy_err:
+                    print(f"[YouTube] Failed to copy file into output dir: {copy_err}")
+                    return None
+
+            return resolved_abs
 
         # Use simpler format that doesn't require ffmpeg merge
         cmd = [
@@ -179,13 +211,13 @@ def download_youtube_video(url, output_dir):
                 if "[Merger] Merging formats into" in line:
                     match = re.search(r'Merging formats into "(.*)"', line)
                     if match:
-                        resolved = _resolve_path(match.group(1))
+                        resolved = _ensure_within_output(_resolve_path(match.group(1)))
                         if resolved and os.path.exists(resolved):
                             return resolved
                 elif "[download] Destination:" in line:
                     match = re.search(r'Destination: (.*)', line)
                     if match:
-                        resolved = _resolve_path(match.group(1))
+                        resolved = _ensure_within_output(_resolve_path(match.group(1)))
                         if resolved and os.path.exists(resolved):
                             return resolved
 
@@ -194,20 +226,20 @@ def download_youtube_video(url, output_dir):
                 if "[download]" in line and "has already been downloaded" in line:
                     match = re.search(r'\[download\] (.*) has already been downloaded', line)
                     if match:
-                        resolved = _resolve_path(match.group(1))
+                        resolved = _ensure_within_output(_resolve_path(match.group(1)))
                         if resolved and os.path.exists(resolved):
                             return resolved
 
             # Fallback to glob if parsing fails
             files = glob.glob(os.path.join(output_dir, "*.mp4"))
             if files:
-                return os.path.abspath(max(files, key=os.path.getctime))
+                return _ensure_within_output(os.path.abspath(max(files, key=os.path.getctime)))
 
             # Last resort: check for any video files
             video_files = glob.glob(os.path.join(output_dir, "*.*"))
             if video_files:
                 print(f"[YouTube] Found files: {video_files}")
-                return os.path.abspath(max(video_files, key=os.path.getctime))
+                return _ensure_within_output(os.path.abspath(max(video_files, key=os.path.getctime)))
         else:
             error_msg = f"yt-dlp failed with code {result.returncode}"
             if stderr_str:
