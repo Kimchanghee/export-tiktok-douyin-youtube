@@ -254,17 +254,22 @@ def download():
         data = request.get_json()
         url = data.get('url', '').strip()
 
+        print(f"[Download Request] URL: {url}")
+
         if not url:
             lang = get_user_language()
             translations = load_translation(lang)
             return jsonify({'error': translations.get('error_url_required', 'URL is required')}), 400
 
         if not url.startswith('http'):
+            print(f"[Download Error] Invalid URL format: {url}")
             return jsonify({'error': 'Invalid URL'}), 400
 
         # Detect platform
         platform = detect_platform(url)
+        print(f"[Download] Detected platform: {platform}")
         if not platform:
+            print(f"[Download Error] Unsupported platform for URL: {url}")
             return jsonify({'error': 'Unsupported platform'}), 400
 
         # Create unique download directory
@@ -305,14 +310,23 @@ def download():
             })
 
         except ThreadsDownloadError as e:
+            print(f"[Download Error] Threads error: {str(e)}")
+            import traceback
+            traceback.print_exc()
             shutil.rmtree(download_dir, ignore_errors=True)
             return jsonify({'error': f'Threads error: {str(e)}'}), 500
 
         except Exception as e:
+            print(f"[Download Error] Platform download failed: {str(e)}")
+            import traceback
+            traceback.print_exc()
             shutil.rmtree(download_dir, ignore_errors=True)
             raise e
 
     except Exception as e:
+        print(f"[Download Error] Unexpected error: {str(e)}")
+        import traceback
+        traceback.print_exc()
         return jsonify({'error': str(e)}), 500
 
 @app.route('/api/file/<download_id>/<filename>')
