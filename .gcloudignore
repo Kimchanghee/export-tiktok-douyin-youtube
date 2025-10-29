@@ -67,3 +67,8 @@ docker-compose.yml
 
 # Claude
 .claude/
+
+# Ensure application code is uploaded for Cloud Build
+!web/**
+!controller/**
+!common/**
