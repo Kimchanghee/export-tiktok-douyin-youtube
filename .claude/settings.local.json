@@ -37,7 +37,16 @@
       "Bash(gcloud run services logs tail:*)",
       "Bash(git add:*)",
       "Bash(git commit:*)",
-      "Bash(git push:*)"
+      "Bash(git push:*)",
+      "Bash(for:*)",
+      "Bash(do echo \"=== 테스트 $i/10 ===\")",
+      "Bash(if [ $? -eq 0 ])",
+      "Bash(then echo \"ads.txt 확인됨!\")",
+      "Bash(break)",
+      "Bash(fi)",
+      "Bash(docker:*)",
+      "Bash(awk:*)",
+      "Bash(git rev-parse:*)"
     ],
     "deny": [],
     "ask": []
