@@ -12,7 +12,7 @@ RUN apt-get update && apt-get install -y \
 # Copy and install Python dependencies
 COPY web/requirements.txt .
 RUN pip install --no-cache-dir --user -r requirements.txt
-RUN pip install --no-cache-dir --user yt-dlp
+RUN pip install --no-cache-dir --user --upgrade yt-dlp
 
 # Final production stage
 FROM python:3.11-slim

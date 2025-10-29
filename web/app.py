@@ -176,6 +176,7 @@ def download_youtube_video(url, output_dir):
             return resolved_abs
 
         # Use simpler format that doesn't require ffmpeg merge
+        # Use multiple fallback strategies to avoid bot detection
         cmd = [
             "yt-dlp",
             "-f", "best[ext=mp4]/best",
@@ -183,8 +184,10 @@ def download_youtube_video(url, output_dir):
             "--no-playlist",
             "--restrict-filenames",
             "--user-agent", "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/120.0.0.0 Safari/537.36",
-            "--extractor-args", "youtube:player_client=android,web",
+            "--extractor-args", "youtube:player_client=android",
+            "--extractor-args", "youtube:player_skip=webpage,configs",
             "--no-check-certificates",
+            "--sleep-requests", "1",
             url
         ]
 
@@ -343,6 +346,11 @@ def download():
 
             elif platform == "threads":
                 filepath = download_threads_video(url, download_dir)
+                print(f"[Threads] Returned filepath: {filepath}")
+                print(f"[Threads] File exists: {os.path.exists(filepath) if filepath else 'None'}")
+                if filepath:
+                    print(f"[Threads] File size: {os.path.getsize(filepath) if os.path.exists(filepath) else 'N/A'}")
+                    print(f"[Threads] Download dir contents: {os.listdir(download_dir) if os.path.exists(download_dir) else 'Dir not found'}")
 
             if not filepath or not os.path.exists(filepath):
                 raise Exception("Download failed - no file created")
