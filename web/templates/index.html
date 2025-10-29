@@ -4,8 +4,32 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta name="google-adsense-account" content="ca-pub-5884595045902078">
-    <meta name="description" content="{{ translations.description }}">
-    <meta name="keywords" content="video downloader, tiktok, youtube, douyin, threads, download video, free">
+
+    <!-- SEO Meta Tags -->
+    <meta name="description" content="{{ translations.seo_description|default(translations.description) }}">
+    <meta name="keywords" content="{{ translations.seo_keywords|default('video downloader, douyin, threads,抖音, 동영상 다운로드, ダウンロード, download video, free, 無料, 무료') }}">
+    <meta name="author" content="WITHYM">
+    <meta name="robots" content="index, follow">
+    <meta name="language" content="{{ current_lang }}">
+
+    <!-- Open Graph Meta Tags -->
+    <meta property="og:title" content="{{ translations.title }} - {{ translations.subtitle }}">
+    <meta property="og:description" content="{{ translations.seo_description|default(translations.description) }}">
+    <meta property="og:type" content="website">
+    <meta property="og:url" content="{{ request.url }}">
+    <meta property="og:site_name" content="{{ translations.title }}">
+    <meta property="og:locale" content="{{ current_lang|replace('-', '_') }}">
+
+    <!-- Twitter Card Meta Tags -->
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:title" content="{{ translations.title }} - {{ translations.subtitle }}">
+    <meta name="twitter:description" content="{{ translations.seo_description|default(translations.description) }}">
+
+    <!-- Alternate Language Links -->
+    {% for lang_code, lang_name in languages.items() %}
+    <link rel="alternate" hreflang="{{ lang_code }}" href="{{ request.base_url }}?lang={{ lang_code }}">
+    {% endfor %}
+
     <title>{{ translations.title }} - {{ translations.subtitle }}</title>
 
     <!-- Google tag (gtag.js) -->
@@ -258,12 +282,51 @@
             border-radius: 6px;
             font-size: 13px;
             color: #4b5563;
+            position: relative;
+            transition: all 0.3s;
         }
 
         body.dark-mode .platform-tag {
             background: #374151;
             border-color: #4b5563;
             color: #d1d5db;
+        }
+
+        .platform-tag.active {
+            background: #dcfce7;
+            border-color: #86efac;
+            color: #166534;
+        }
+
+        body.dark-mode .platform-tag.active {
+            background: #064e3b;
+            border-color: #059669;
+            color: #6ee7b7;
+        }
+
+        .platform-tag.inactive {
+            background: #fee2e2;
+            border-color: #fca5a5;
+            color: #991b1b;
+            opacity: 0.7;
+        }
+
+        body.dark-mode .platform-tag.inactive {
+            background: #7f1d1d;
+            border-color: #dc2626;
+            color: #fca5a5;
+        }
+
+        .platform-tag.active::after {
+            content: "✓";
+            margin-left: 6px;
+            font-weight: bold;
+        }
+
+        .platform-tag.inactive::after {
+            content: "✗";
+            margin-left: 6px;
+            font-weight: bold;
         }
 
         .form-group {
@@ -570,10 +633,9 @@
             <p class="description">{{ translations.description }}</p>
 
             <div class="platforms">
-                <span class="platform-tag">📹 {{ translations.platforms.youtube }}</span>
-                <span class="platform-tag">🎵 {{ translations.platforms.tiktok }}</span>
-                <span class="platform-tag">🎭 {{ translations.platforms.douyin }}</span>
-                <span class="platform-tag">🧵 {{ translations.platforms.threads }}</span>
+                <span class="platform-tag inactive" title="{{ translations.platform_status.youtube_unavailable|default('Currently unavailable') }}">📹 {{ translations.platforms.youtube }}</span>
+                <span class="platform-tag active" title="{{ translations.platform_status.available|default('Available') }}">🎭 {{ translations.platforms.douyin }}</span>
+                <span class="platform-tag active" title="{{ translations.platform_status.available|default('Available') }}">🧵 {{ translations.platforms.threads }}</span>
             </div>
 
             {% if adsense.enabled and adsense.slots.top.enabled %}

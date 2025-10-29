@@ -1,7 +1,9 @@
 {
   "title": "動画ダウンローダー",
-  "subtitle": "TikTok · Douyin · YouTube · Threads",
-  "description": "TikTok、Douyin、YouTube、Threadsから無料で動画をダウンロード",
+  "subtitle": "Douyin · Threads",
+  "description": "Douyin(抖音)、Threadsから無料で動画をダウンロード。高速で安全なオンライン動画ダウンローダー",
+  "seo_description": "無料Douyin(抖音)、Threads動画ダウンローダー - ウォーターマークなしでHD動画をダウンロード。高速、安全、ログイン不要、無制限ダウンロード対応。",
+  "seo_keywords": "douyinダウンロード, 抖音ダウンロード, threadsダウンロード, 動画ダウンローダー, 無料動画保存, ウォーターマーク削除, HD動画ダウンロード",
   "url_label": "ビデオURL",
   "url_placeholder": "https://youtube.com/watch?v=...",
   "download_button": "ダウンロード",
@@ -17,8 +19,12 @@
   "platforms": {
     "youtube": "YouTube",
     "tiktok": "TikTok",
-    "douyin": "Douyin",
+    "douyin": "Douyin (抖音)",
     "threads": "Threads"
+  },
+  "platform_status": {
+    "available": "利用可能",
+    "youtube_unavailable": "YouTubeは現在利用不可（サーバーIPブロック）"
   },
   "footer": "Made by WITHYM",
   "language": "言語",
@@ -46,7 +52,7 @@
     },
     {
       "question": "どのプラットフォームに対応していますか？",
-      "answer": "TikTok、Douyin、YouTube（通常動画およびShorts）、Threadsに対応しています。さらに多くのプラットフォームを準備中です。"
+      "answer": "現在Douyin(抖音)とThreadsに対応しています。YouTubeはサーバーIPブロックにより一時的に利用できません。さらに多くのプラットフォームを準備中です。"
     },
     {
       "question": "ダウンロードした動画にウォーターマークはありますか？",

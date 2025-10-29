@@ -1,7 +1,9 @@
 {
   "title": "视频下载器",
-  "subtitle": "TikTok · 抖音 · YouTube · Threads",
-  "description": "免费下载TikTok、抖音、YouTube和Threads视频",
+  "subtitle": "抖音 · Threads",
+  "description": "免费下载抖音、Threads视频。快速安全的在线视频下载工具",
+  "seo_description": "免费抖音、Threads视频下载器 - 下载高清视频无水印。快速、安全、无需登录、无限下载。",
+  "seo_keywords": "抖音下载, douyin下载, threads下载, 视频下载器, 免费视频保存, 去除水印, 高清视频下载, 在线下载",
   "url_label": "视频URL",
   "url_placeholder": "https://youtube.com/watch?v=...",
   "download_button": "下载",
@@ -17,8 +19,12 @@
   "platforms": {
     "youtube": "YouTube",
     "tiktok": "TikTok",
-    "douyin": "抖音",
+    "douyin": "抖音 (Douyin)",
     "threads": "Threads"
+  },
+  "platform_status": {
+    "available": "可用",
+    "youtube_unavailable": "YouTube暂时不可用（服务器IP被封）"
   },
   "footer": "Made by WITHYM",
   "language": "语言",
@@ -46,7 +52,7 @@
     },
     {
       "question": "支持哪些平台？",
-      "answer": "我们支持TikTok、抖音、YouTube（常规视频和Shorts）和Threads。更多平台即将推出。"
+      "answer": "目前支持抖音和Threads。YouTube由于服务器IP被封暂时不可用。更多平台即将推出。"
     },
     {
       "question": "下载的视频有水印吗？",

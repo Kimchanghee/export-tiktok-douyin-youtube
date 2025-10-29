@@ -103,15 +103,73 @@ def load_translation(lang_code):
         return {{}}
 
 def get_user_language():
-    """Get user's preferred language from session or browser"""
-    # Check session
+    """Get user's preferred language from session, URL, or browser with region detection"""
+    # 1. Check URL parameter (highest priority for user choice)
+    url_lang = request.args.get('lang')
+    if url_lang and url_lang in [l['code'] for l in SUPPORTED_LANGUAGES]:
+        session['lang'] = url_lang
+        return url_lang
+
+    # 2. Check session
     if 'lang' in session:
         return session['lang']
 
-    # Check Accept-Language header
-    lang = request.accept_languages.best_match([l['code'] for l in SUPPORTED_LANGUAGES])
+    # 3. Check Cloudflare headers for country code
+    cf_country = request.headers.get('CF-IPCountry', '').upper()
+    country_to_lang = {
+        'KR': 'ko',  # South Korea
+        'CN': 'zh',  # China
+        'TW': 'zh-TW',  # Taiwan
+        'HK': 'zh-HK',  # Hong Kong
+        'JP': 'ja',  # Japan
+        'VN': 'vi',  # Vietnam
+        'TH': 'th',  # Thailand
+        'ID': 'id',  # Indonesia
+        'PH': 'en',  # Philippines
+        'MY': 'ms',  # Malaysia
+        'SG': 'en',  # Singapore
+        'IN': 'hi',  # India
+        'DE': 'de',  # Germany
+        'FR': 'fr',  # France
+        'ES': 'es',  # Spain
+        'IT': 'it',  # Italy
+        'PT': 'pt',  # Portugal
+        'BR': 'pt-BR',  # Brazil
+        'RU': 'ru',  # Russia
+        'TR': 'tr',  # Turkey
+        'SA': 'ar',  # Saudi Arabia
+        'AE': 'ar',  # UAE
+    }
 
-    return lang or DEFAULT_LANGUAGE
+    if cf_country in country_to_lang:
+        suggested_lang = country_to_lang[cf_country]
+        # Verify this language is supported
+        if suggested_lang in [l['code'] for l in SUPPORTED_LANGUAGES]:
+            return suggested_lang
+
+    # 4. Check Accept-Language header (browser preference)
+    supported_codes = [l['code'] for l in SUPPORTED_LANGUAGES]
+
+    # Parse Accept-Language header more intelligently
+    accept_languages = request.accept_languages
+    for lang_option in accept_languages:
+        lang_code = lang_option[0]
+
+        # Exact match
+        if lang_code in supported_codes:
+            return lang_code
+
+        # Base language match (e.g., 'zh' from 'zh-CN')
+        base_lang = lang_code.split('-')[0]
+        if base_lang in supported_codes:
+            return base_lang
+
+        # Regional variant match
+        for supported_code in supported_codes:
+            if supported_code.startswith(base_lang):
+                return supported_code
+
+    return DEFAULT_LANGUAGE
 
 def detect_platform(url):
     """Detect video platform from URL"""
