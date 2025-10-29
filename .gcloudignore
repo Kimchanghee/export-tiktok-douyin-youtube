@@ -7,68 +7,7 @@
 .git
 .gitignore
 
-# Python
-__pycache__/
-*.py[cod]
-*$py.class
-*.so
-.Python
-env/
-venv/
-ENV/
-*.egg-info/
-dist/
-build/
-
-# Tests
-test_*.py
-*_test.py
-tests/
-
-# Documentation
-README*.md
-*.txt
-사용방법.txt
-DEPLOYMENT.md
-
-# IDE
-.vscode/
-.idea/
-*.swp
-*.swo
-
-# Build files
-*.exe
-*.spec
-build/
-dist/
-build.bat
-build_exe.py
-
-# Desktop app
-main.py
-run.bat
-icon.ico
-icon.png
-create_icon.py
-
-# Test outputs
-threads_*.json
-threads_*.txt
-threads_*.png
-jina_*.txt
-instagram_*.html
-mobile_*.html
-oembed_*.json
-*.pyc
-
-# Docker (not needed for Cloud Build)
-docker-compose.yml
-
-# Claude
-.claude/
-
-# Ensure application code is uploaded for Cloud Build
-!web/**
-!controller/**
-!common/**
+# Upload everything except the ignore files themselves
+.gcloudignore
+.git
+.gitignore
