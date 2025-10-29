@@ -66,7 +66,8 @@ CMD exec gunicorn \
     --bind 0.0.0.0:8080 \
     --workers 2 \
     --threads 4 \
-    --timeout 300 \
+    --timeout 900 \
+    --graceful-timeout 900 \
     --worker-class gthread \
     --access-logfile - \
     --error-logfile - \
