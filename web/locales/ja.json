@@ -17,14 +17,14 @@
   "error_download_failed": "ダウンロード失敗",
   "success_message": "ダウンロード成功!",
   "platforms": {
-    "youtube": "YouTube",
     "tiktok": "TikTok",
     "douyin": "Douyin (抖音)",
-    "threads": "Threads"
+    "threads": "Threads",
+    "twitter": "Twitter/X",
+    "instagram": "Instagram"
   },
   "platform_status": {
-    "available": "利用可能",
-    "youtube_unavailable": "YouTubeは現在利用不可（サーバーIPブロック）"
+    "available": "利用可能"
   },
   "footer": "Made by WITHYM",
   "language": "言語",
@@ -52,7 +52,7 @@
     },
     {
       "question": "どのプラットフォームに対応していますか？",
-      "answer": "現在Douyin(抖音)とThreadsに対応しています。YouTubeはサーバーIPブロックにより一時的に利用できません。さらに多くのプラットフォームを準備中です。"
+      "answer": "TikTok、Douyin(抖音)、Threads、Twitter/X、Instagramに対応しています。各プラットフォームから動画と画像を高画質でダウンロードできます。"
     },
     {
       "question": "ダウンロードした動画にウォーターマークはありますか？",

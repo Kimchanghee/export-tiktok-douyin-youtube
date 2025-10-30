@@ -17,14 +17,14 @@
   "error_download_failed": "下载失败",
   "success_message": "下载成功!",
   "platforms": {
-    "youtube": "YouTube",
     "tiktok": "TikTok",
     "douyin": "抖音 (Douyin)",
-    "threads": "Threads"
+    "threads": "Threads",
+    "twitter": "Twitter/X",
+    "instagram": "Instagram"
   },
   "platform_status": {
-    "available": "可用",
-    "youtube_unavailable": "YouTube暂时不可用（服务器IP被封）"
+    "available": "可用"
   },
   "footer": "Made by WITHYM",
   "language": "语言",
@@ -52,7 +52,7 @@
     },
     {
       "question": "支持哪些平台？",
-      "answer": "目前支持抖音和Threads。YouTube由于服务器IP被封暂时不可用。更多平台即将推出。"
+      "answer": "支持TikTok、抖音(Douyin)、Threads、Twitter/X、Instagram。各平台均可高清下载视频和图片。"
     },
     {
       "question": "下载的视频有水印吗？",
