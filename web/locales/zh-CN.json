@@ -1,9 +1,9 @@
 {
   "title": "视频下载器",
-  "subtitle": "抖音 · Threads",
-  "description": "免费下载抖音、Threads视频。快速安全的在线视频下载工具",
-  "seo_description": "免费抖音、Threads视频下载器 - 下载高清视频无水印。快速、安全、无需登录、无限下载。",
-  "seo_keywords": "抖音下载, douyin下载, threads下载, 视频下载器, 免费视频保存, 去除水印, 高清视频下载, 在线下载",
+  "subtitle": "TikTok · 抖音 · Threads · Twitter · Instagram",
+  "description": "免费下载TikTok、抖音、Threads、Twitter、Instagram视频。快速安全的在线视频下载工具",
+  "seo_description": "免费TikTok、抖音、Threads、Twitter、Instagram视频下载器 - 下载高清视频无水印。快速、安全、无需登录、无限下载。",
+  "seo_keywords": "tiktok下载, 抖音下载, douyin下载, threads下载, twitter下载, instagram下载, 视频下载器, 免费视频保存, 去除水印, 高清视频下载",
   "url_label": "视频URL",
   "url_placeholder": "https://www.tiktok.com/@user/video/... or https://v.douyin.com/...",
   "download_button": "下载",
