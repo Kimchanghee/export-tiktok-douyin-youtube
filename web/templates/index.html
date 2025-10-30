@@ -7,7 +7,7 @@
 
     <!-- SEO Meta Tags -->
     <meta name="description" content="{{ translations.seo_description|default(translations.description) }}">
-    <meta name="keywords" content="{{ translations.seo_keywords|default('video downloader, douyin, threads,抖音, 동영상 다운로드, ダウンロード, download video, free, 無料, 무료') }}">
+    <meta name="keywords" content="{{ translations.seo_keywords|default('video downloader, douyin, threads,?뽭윹, ?숈쁺???ㅼ슫濡쒕뱶, ??╉꺍??꺖?? download video, free, ?→뼑, 臾대즺') }}">
     <meta name="author" content="WITHYM">
     <meta name="robots" content="index, follow">
     <meta name="language" content="{{ current_lang }}">
@@ -318,13 +318,13 @@
         }
 
         .platform-tag.active::after {
-            content: "✓";
+            content: "??;
             margin-left: 6px;
             font-weight: bold;
         }
 
         .platform-tag.inactive::after {
-            content: "✗";
+            content: "??;
             margin-left: 6px;
             font-weight: bold;
         }
@@ -606,12 +606,12 @@
         <div class="header-content">
             <div class="logo">{{ translations.title }}</div>
             <div class="header-controls">
-                <button class="theme-toggle" id="themeToggle">🌙</button>
+                <button class="theme-toggle" id="themeToggle">?뙔</button>
                 <div class="lang-selector">
                     <button class="lang-btn" id="langBtn">
                         <span>{{ languages|selectattr('code', 'equalto', current_lang)|map(attribute='flag')|first }}</span>
                         <span>{{ languages|selectattr('code', 'equalto', current_lang)|map(attribute='name')|first }}</span>
-                        <span>▼</span>
+                        <span>??/span>
                     </button>
                     <div class="lang-dropdown" id="langDropdown">
                         {% for lang in languages %}
@@ -633,11 +633,11 @@
             <p class="description">{{ translations.description }}</p>
 
             <div class="platforms">
+                <span class="platform-tag active" title="{{ translations.platform_status.available|default('Available') }}">📹 {{ translations.platforms.youtube }}</span>
                 <span class="platform-tag active" title="{{ translations.platform_status.available|default('Available') }}">🎵 {{ translations.platforms.tiktok }}</span>
                 <span class="platform-tag active" title="{{ translations.platform_status.available|default('Available') }}">🎭 {{ translations.platforms.douyin }}</span>
                 <span class="platform-tag active" title="{{ translations.platform_status.available|default('Available') }}">🧵 {{ translations.platforms.threads }}</span>
-                <span class="platform-tag active" title="{{ translations.platform_status.available|default('Available') }}">🐦 {{ translations.platforms.twitter }}</span>
-                <span class="platform-tag active" title="{{ translations.platform_status.available|default('Available') }}">📷 {{ translations.platforms.instagram }}</span>
+                <span class="platform-tag active" title="{{ translations.platform_status.available|default('Available') }}">?벜 {{ translations.platforms.instagram }}</span>
             </div>
 
             {% if adsense.enabled and adsense.slots.top.enabled %}
@@ -684,7 +684,7 @@
                 <p><strong>{{ translations.filename }}:</strong> <span id="filename"></span></p>
                 <p><strong>{{ translations.filesize }}:</strong> <span id="filesize"></span></p>
                 <a id="downloadLink" href="#" target="_blank" class="btn-download">
-                    📥 {{ translations.download_file }}
+                    ?뱿 {{ translations.download_file }}
                 </a>
             </div>
         </div>
@@ -693,19 +693,19 @@
             <h2>{{ translations.features_title }}</h2>
             <div class="features-grid">
                 <div class="feature-item">
-                    <div class="feature-icon">✨</div>
+                    <div class="feature-icon">??/div>
                     <div class="feature-text">{{ translations.feature_free }}</div>
                 </div>
                 <div class="feature-item">
-                    <div class="feature-icon">⚡</div>
+                    <div class="feature-icon">??/div>
                     <div class="feature-text">{{ translations.feature_fast }}</div>
                 </div>
                 <div class="feature-item">
-                    <div class="feature-icon">🎬</div>
+                    <div class="feature-icon">?렗</div>
                     <div class="feature-text">{{ translations.feature_quality }}</div>
                 </div>
                 <div class="feature-item">
-                    <div class="feature-icon">🔒</div>
+                    <div class="feature-icon">?뵏</div>
                     <div class="feature-text">{{ translations.feature_safe }}</div>
                 </div>
             </div>
@@ -751,13 +751,13 @@
         const savedTheme = localStorage.getItem('theme');
         if (savedTheme === 'dark') {
             document.body.classList.add('dark-mode');
-            themeToggle.textContent = '☀️';
+            themeToggle.textContent = '?截?;
         }
 
         themeToggle.addEventListener('click', () => {
             document.body.classList.toggle('dark-mode');
             const isDark = document.body.classList.contains('dark-mode');
-            themeToggle.textContent = isDark ? '☀️' : '🌙';
+            themeToggle.textContent = isDark ? '?截? : '?뙔';
             localStorage.setItem('theme', isDark ? 'dark' : 'light');
         });
 
