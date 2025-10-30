@@ -19,6 +19,8 @@ sys.path.insert(0, os.path.dirname(os.path.dirname(os.path.abspath(__file__))))
 
 from controller.DouyinExtract import download_tiktok_douyin_video
 from controller.ThreadsExtract import download_threads_video, ThreadsDownloadError
+from controller.TwitterExtract import download_twitter_video
+from controller.InstagramExtract import download_instagram_media
 import subprocess
 
 app = Flask(__name__)
@@ -175,148 +177,19 @@ def detect_platform(url):
     """Detect video platform from URL"""
     url_lower = url.lower()
 
-    if "youtube.com" in url_lower or "youtu.be" in url_lower:
-        return "youtube"
-    elif "tiktok.com" in url_lower:
+    if "tiktok.com" in url_lower:
         return "tiktok"
     elif "douyin.com" in url_lower:
         return "douyin"
     elif "threads.net" in url_lower or "threads.com" in url_lower:
         return "threads"
+    elif "twitter.com" in url_lower or "x.com" in url_lower:
+        return "twitter"
+    elif "instagram.com" in url_lower:
+        return "instagram"
     else:
         return None
 
-def download_youtube_video(url, output_dir):
-    """Download YouTube video using yt-dlp"""
-    try:
-        output_template = os.path.join(output_dir, "%(title)s_%(id)s.%(ext)s")
-
-        output_dir_abs = os.path.abspath(output_dir)
-
-        def _resolve_path(candidate: str) -> Optional[str]:
-            if not candidate:
-                return None
-            candidate = candidate.strip().strip('"').strip("'")
-            if not candidate:
-                return None
-            if not os.path.isabs(candidate):
-                candidate = os.path.join(output_dir, candidate)
-            return os.path.abspath(candidate)
-
-        def _ensure_within_output(resolved: Optional[str]) -> Optional[str]:
-            if not resolved:
-                return None
-            resolved_abs = os.path.abspath(resolved)
-            try:
-                common = os.path.commonpath([output_dir_abs, resolved_abs])
-            except ValueError:
-                common = None
-
-            if common != output_dir_abs:
-                # Move/copy file into the current output directory so the API can serve it.
-                basename = os.path.basename(resolved_abs) or f"video_{uuid.uuid4().hex}.mp4"
-                target = os.path.join(output_dir_abs, basename)
-
-                if os.path.abspath(target) == resolved_abs:
-                    return resolved_abs
-
-                if os.path.exists(target):
-                    base, ext = os.path.splitext(basename)
-                    target = os.path.join(output_dir_abs, f"{base}_{uuid.uuid4().hex[:6]}{ext}")
-
-                try:
-                    shutil.copy2(resolved_abs, target)
-                    resolved_abs = os.path.abspath(target)
-                except Exception as copy_err:
-                    print(f"[YouTube] Failed to copy file into output dir: {copy_err}")
-                    return None
-
-            return resolved_abs
-
-        # Use simpler format that doesn't require ffmpeg merge
-        # Use iOS client which has better bot detection avoidance
-        cmd = [
-            "yt-dlp",
-            "-f", "best[ext=mp4]/bestvideo[ext=mp4]+bestaudio[ext=m4a]/best",
-            "-o", output_template,
-            "--no-playlist",
-            "--restrict-filenames",
-            "--extractor-args", "youtube:player_client=ios,web",
-            "--extractor-args", "youtube:skip=dash,hls",
-            url
-        ]
-
-        print(f"[YouTube] Running command: {' '.join(cmd)}")
-
-        result = subprocess.run(
-            cmd,
-            stdout=subprocess.PIPE,
-            stderr=subprocess.PIPE,
-            timeout=300
-        )
-
-        stdout_str = result.stdout.decode('utf-8', errors='replace')
-        stderr_str = result.stderr.decode('utf-8', errors='replace')
-
-        print(f"[YouTube] Return code: {result.returncode}")
-        print(f"[YouTube] stdout: {stdout_str[:500]}")
-        print(f"[YouTube] stderr: {stderr_str[:500]}")
-
-        if result.returncode == 0:
-            # Try to find the filename from yt-dlp's output
-            import re
-            import glob
-
-            output_lines = stdout_str.splitlines()
-            for line in output_lines:
-                if "[Merger] Merging formats into" in line:
-                    match = re.search(r'Merging formats into "(.*)"', line)
-                    if match:
-                        resolved = _ensure_within_output(_resolve_path(match.group(1)))
-                        if resolved and os.path.exists(resolved):
-                            return resolved
-                elif "[download] Destination:" in line:
-                    match = re.search(r'Destination: (.*)', line)
-                    if match:
-                        resolved = _ensure_within_output(_resolve_path(match.group(1)))
-                        if resolved and os.path.exists(resolved):
-                            return resolved
-
-            # Fallback for already downloaded files
-            for line in output_lines:
-                if "[download]" in line and "has already been downloaded" in line:
-                    match = re.search(r'\[download\] (.*) has already been downloaded', line)
-                    if match:
-                        resolved = _ensure_within_output(_resolve_path(match.group(1)))
-                        if resolved and os.path.exists(resolved):
-                            return resolved
-
-            # Fallback to glob if parsing fails
-            files = glob.glob(os.path.join(output_dir, "*.mp4"))
-            if files:
-                return _ensure_within_output(os.path.abspath(max(files, key=os.path.getctime)))
-
-            # Last resort: check for any video files
-            video_files = glob.glob(os.path.join(output_dir, "*.*"))
-            if video_files:
-                print(f"[YouTube] Found files: {video_files}")
-                return _ensure_within_output(os.path.abspath(max(video_files, key=os.path.getctime)))
-        else:
-            error_msg = f"yt-dlp failed with code {result.returncode}"
-            if stderr_str:
-                error_msg += f": {stderr_str[:200]}"
-            print(f"[YouTube] Error: {error_msg}")
-            raise Exception(error_msg)
-
-        return None
-
-    except subprocess.TimeoutExpired:
-        raise Exception("YouTube download timeout (300s)")
-    except FileNotFoundError:
-        raise Exception("yt-dlp not installed")
-    except Exception as e:
-        print(f"[YouTube] Exception: {str(e)}")
-        raise Exception(f"YouTube download failed: {str(e)}")
 
 @app.route('/')
 def index():
@@ -388,10 +261,7 @@ def download():
         filepath = None
 
         try:
-            if platform == "youtube":
-                filepath = download_youtube_video(url, download_dir)
-
-            elif platform in ["tiktok", "douyin"]:
+            if platform in ["tiktok", "douyin"]:
                 filepath = download_tiktok_douyin_video(url)
                 if filepath and os.path.exists(filepath):
                     # Move to download dir
@@ -406,6 +276,14 @@ def download():
                 if filepath:
                     print(f"[Threads] File size: {os.path.getsize(filepath) if os.path.exists(filepath) else 'N/A'}")
                     print(f"[Threads] Download dir contents: {os.listdir(download_dir) if os.path.exists(download_dir) else 'Dir not found'}")
+
+            elif platform == "twitter":
+                filepath = download_twitter_video(url, download_dir)
+                print(f"[Twitter] Downloaded: {filepath}")
+
+            elif platform == "instagram":
+                filepath = download_instagram_media(url, download_dir)
+                print(f"[Instagram] Downloaded: {filepath}")
 
             if not filepath or not os.path.exists(filepath):
                 raise Exception("Download failed - no file created")
@@ -500,10 +378,11 @@ def platforms():
     """List supported platforms"""
     return jsonify({
         'platforms': [
-            {'id': 'youtube', 'name': 'YouTube', 'types': ['videos', 'shorts']},
             {'id': 'tiktok', 'name': 'TikTok', 'types': ['videos']},
-            {'id': 'douyin', 'name': 'Douyin', 'types': ['videos']},
+            {'id': 'douyin', 'name': 'Douyin (抖音)', 'types': ['videos']},
             {'id': 'threads', 'name': 'Threads', 'types': ['videos', 'images']},
+            {'id': 'twitter', 'name': 'Twitter/X', 'types': ['videos']},
+            {'id': 'instagram', 'name': 'Instagram', 'types': ['videos', 'reels', 'photos']},
         ]
     })
 

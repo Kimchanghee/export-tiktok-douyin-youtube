@@ -633,9 +633,11 @@
             <p class="description">{{ translations.description }}</p>
 
             <div class="platforms">
-                <span class="platform-tag inactive" title="{{ translations.platform_status.youtube_unavailable|default('Currently unavailable') }}">📹 {{ translations.platforms.youtube }}</span>
+                <span class="platform-tag active" title="{{ translations.platform_status.available|default('Available') }}">🎵 {{ translations.platforms.tiktok }}</span>
                 <span class="platform-tag active" title="{{ translations.platform_status.available|default('Available') }}">🎭 {{ translations.platforms.douyin }}</span>
                 <span class="platform-tag active" title="{{ translations.platform_status.available|default('Available') }}">🧵 {{ translations.platforms.threads }}</span>
+                <span class="platform-tag active" title="{{ translations.platform_status.available|default('Available') }}">🐦 {{ translations.platforms.twitter }}</span>
+                <span class="platform-tag active" title="{{ translations.platform_status.available|default('Available') }}">📷 {{ translations.platforms.instagram }}</span>
             </div>
 
             {% if adsense.enabled and adsense.slots.top.enabled %}
