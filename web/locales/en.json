@@ -1,11 +1,11 @@
 {
   "title": "Video Downloader",
-  "subtitle": "TikTok · Douyin · YouTube · Threads",
-  "description": "Download videos from TikTok, Douyin, YouTube, and Threads for free.",
-  "seo_description": "TikTok, Douyin, YouTube, Threads video downloader - fast, safe, high-quality downloads with no watermark.",
-  "seo_keywords": "tiktok downloader, douyin downloader, youtube downloader, threads downloader, free video saver, no watermark, hd video",
+  "subtitle": "TikTok · Douyin · Threads · Twitter · Instagram",
+  "description": "Download videos from TikTok, Douyin (抖音), Threads, Twitter, and Instagram for free. Fast and secure online video downloader",
+  "seo_description": "Free TikTok, Douyin (抖音), Threads, Twitter, Instagram video downloader - Download HD videos without watermark. Fast, secure, no login required, unlimited downloads.",
+  "seo_keywords": "tiktok downloader, douyin downloader, 抖音 downloader, threads downloader, twitter downloader, instagram downloader, video downloader, free video download, no watermark, HD video download",
   "url_label": "Video URL",
-  "url_placeholder": "https://youtube.com/watch?v=...",
+  "url_placeholder": "https://www.tiktok.com/@user/video/... or https://www.instagram.com/reel/...",
   "download_button": "Download",
   "downloading": "Downloading video...",
   "download_ready": "Download Ready!",
@@ -21,8 +21,7 @@
     "douyin": "Douyin (抖音)",
     "threads": "Threads",
     "twitter": "Twitter/X",
-    "instagram": "Instagram",
-    "youtube": "YouTube"
+    "instagram": "Instagram"
   },
   "platform_status": {
     "available": "Available"
@@ -30,20 +29,20 @@
   "footer": "Made by WITHYM",
   "language": "Language",
   "features_title": "Key Features",
-  "feature_free": "Completely free",
-  "feature_fast": "Fast downloads",
-  "feature_quality": "High-quality support",
-  "feature_safe": "Secure downloads",
+  "feature_free": "Completely Free",
+  "feature_fast": "Fast Download",
+  "feature_quality": "High Quality",
+  "feature_safe": "Safe Download",
   "how_to_use": "How to Use",
   "step1": "Copy video URL",
   "step2": "Paste it above",
   "step3": "Click download",
   "step4": "Save file!",
   "seo": {
-    "title": "Free Video Downloader - TikTok · Douyin · YouTube · Threads 2025",
-    "description": "Save high-quality videos from TikTok, Douyin, YouTube, and Threads for free. No watermark, fast, and secure.",
-    "keywords": "video downloader, tiktok downloader, douyin downloader, youtube downloader, threads downloader, free video saver, no watermark, hd video",
-    "og_title": "Free Video Downloader - TikTok · Douyin · YouTube · Threads",
-    "og_description": "Download videos without watermarks - fast, secure, and high quality."
+    "title": "Free Video Downloader - TikTok · Douyin · Threads · Twitter · Instagram 2025",
+    "description": "Save high-quality videos from TikTok, Douyin, Threads, Twitter, and Instagram for free. No watermark, fast, and secure.",
+    "keywords": "video downloader, tiktok downloader, douyin downloader, threads downloader, twitter downloader, instagram downloader, free video saver, no watermark, hd video",
+    "og_title": "Free Video Downloader - TikTok · Douyin · Threads · Twitter · Instagram",
+    "og_description": "Download videos without watermarks — fast, secure, and high quality."
   }
 }
