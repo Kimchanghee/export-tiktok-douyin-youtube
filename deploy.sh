@@ -35,9 +35,9 @@ echo -e "${GREEN}✓ 프로젝트 번호: $PROJECT_NUMBER${NC}"
 REGION=$(gcloud config get-value run/region 2>/dev/null)
 
 if [ -z "$REGION" ]; then
-    echo -e "${YELLOW}⚠ 리전이 설정되지 않았습니다. 서울(asia-northeast3)로 설정합니다.${NC}"
-    gcloud config set run/region asia-northeast3
-    REGION="asia-northeast3"
+    echo -e "${YELLOW}⚠ 리전이 설정되지 않았습니다. 도쿄(asia-northeast1)로 설정합니다.${NC}"
+    gcloud config set run/region asia-northeast1
+    REGION="asia-northeast1"
 fi
 
 echo -e "${GREEN}✓ 리전: $REGION${NC}"

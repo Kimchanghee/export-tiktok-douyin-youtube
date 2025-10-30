@@ -25,7 +25,7 @@ steps:
       - '--image'
       - 'gcr.io/$PROJECT_ID/video-downloader:latest'
       - '--region'
-      - 'asia-northeast3'  # Seoul region
+      - 'asia-northeast1'  # Tokyo region
       - '--platform'
       - 'managed'
       - '--allow-unauthenticated'

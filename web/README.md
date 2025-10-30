@@ -44,7 +44,7 @@ docker-compose up --build
 ```bash
 gcloud run deploy export-tiktok-douyin-youtube \
   --source . \
-  --region=asia-northeast3 \
+  --region=asia-northeast1 \
   --allow-unauthenticated \
   --memory=4Gi \
   --cpu=2 \

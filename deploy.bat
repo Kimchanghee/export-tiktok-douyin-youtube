@@ -29,9 +29,9 @@ REM 리전 확인
 for /f "tokens=*" %%i in ('gcloud config get-value run/region 2^>nul') do set REGION=%%i
 
 if "%REGION%"=="" (
-    echo ⚠ 리전이 설정되지 않았습니다. 서울(asia-northeast3)로 설정합니다.
-    gcloud config set run/region asia-northeast3
-    set REGION=asia-northeast3
+    echo ⚠ 리전이 설정되지 않았습니다. 도쿄(asia-northeast1)로 설정합니다.
+    gcloud config set run/region asia-northeast1
+    set REGION=asia-northeast1
 )
 
 echo ✓ 리전: %REGION%
