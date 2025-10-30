@@ -1,24 +1,25 @@
 {
   "title": "Video Nedladdare",
-  "subtitle": "TikTok · Douyin · YouTube · Threads",
-  "description": "Ladda ner videor gratis från TikTok, Douyin, YouTube och Threads",
+  "subtitle": "TikTok · Douyin · Threads · Twitter · Instagram",
+  "description": "Ladda ner videor gratis från TikTok, Douyin, Threads, Twitter och Instagram",
   "url_label": "Video URL",
-  "url_placeholder": "https://youtube.com/watch?v=...",
+  "url_placeholder": "https://www.tiktok.com/@anvandare/video/... eller https://www.instagram.com/reel/...",
   "download_button": "Ladda ner",
   "downloading": "Laddar ner video...",
-  "download_ready": "Nedladdning klar!",
+  "download_ready": "Nedladdningen är klar!",
   "platform": "Plattform",
   "filename": "Filnamn",
   "filesize": "Storlek",
   "download_file": "Ladda ner fil",
-  "error_url_required": "Vänligen ange en URL",
-  "error_download_failed": "Nedladdning misslyckades",
+  "error_url_required": "Ange en URL",
+  "error_download_failed": "Nedladdningen misslyckades",
   "success_message": "Nedladdning lyckades!",
   "platforms": {
-    "youtube": "YouTube",
     "tiktok": "TikTok",
     "douyin": "Douyin",
-    "threads": "Threads"
+    "threads": "Threads",
+    "twitter": "Twitter/X",
+    "instagram": "Instagram"
   },
   "footer": "Skapad av WITHYM",
   "language": "Språk",
@@ -27,9 +28,42 @@
   "feature_fast": "Snabb Nedladdning",
   "feature_quality": "Hög Kvalitet",
   "feature_safe": "Säker Nedladdning",
-  "how_to_use": "Hur Man Använder",
-  "step1": "Kopiera video URL",
+  "how_to_use": "Hur man använder",
+  "step1": "Kopiera video-URL",
   "step2": "Klistra in ovan",
-  "step3": "Klicka ladda ner",
-  "step4": "Spara fil!"
+  "step3": "Klicka på ladda ner",
+  "step4": "Spara filen!",
+  "seo": {
+    "title": "Gratis Video Nedladdare - TikTok, Douyin, Threads, Twitter, Instagram 2025",
+    "description": "Ladda ner HD-videor gratis från TikTok, Douyin, Threads, Twitter och Instagram. Snabb, säker och enkel online-nedladdare utan vattenmärke, utan inloggning, obegränsade nedladdningar.",
+    "keywords": "video nedladdare, ladda ner tiktok, ladda ner threads, ladda ner twitter, ladda ner instagram, ladda ner douyin, spara video, ta bort vattenmärke, hd video",
+    "og_title": "Gratis Video Nedladdare - TikTok · Threads · Douyin · Twitter · Instagram",
+    "og_description": "Ladda ner videor gratis utan vattenmärke. Ett snabbt och säkert onlineverktyg."
+  },
+  "faq": [
+    {
+      "question": "Är denna video-nedladdare gratis?",
+      "answer": "Ja, helt gratis. Inga dolda kostnader eller prenumerationer och obegränsat antal nedladdningar."
+    },
+    {
+      "question": "Vilka plattformar stöds?",
+      "answer": "Vi stöder TikTok, Douyin, Threads, Twitter/X och Instagram. Fler plattformar kommer snart."
+    },
+    {
+      "question": "Har nedladdade videor vattenmärke?",
+      "answer": "Det beror på plattformen. När det är möjligt erbjuder vi versioner utan vattenmärke och laddar alltid ner i högsta möjliga kvalitet."
+    },
+    {
+      "question": "Behöver jag logga in för att ladda ner videor?",
+      "answer": "Nej, ingen inloggning eller registrering krävs. Klistra bara in video-URL:en och starta nedladdningen direkt."
+    },
+    {
+      "question": "Finns det någon gräns för nedladdningar?",
+      "answer": "Nej, inga begränsningar. Du kan ladda ner så många videor du vill."
+    },
+    {
+      "question": "Kan jag använda tjänsten i mobilen?",
+      "answer": "Ja, den fungerar perfekt i mobilwebbläsare och är fullt kompatibel med både iOS och Android."
+    }
+  ]
 }

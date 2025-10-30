@@ -89,7 +89,7 @@ When enabled, the following events are automatically tracked:
 - **download_success**: When download completes successfully
 - **download_error**: When download fails
 - **language_change**: When user changes language
-- **platform_detect**: Which platform was detected (youtube, tiktok, etc.)
+- **platform_detect**: Which platform was detected (tiktok, douyin, threads, twitter, instagram)
 
 ### Privacy Settings:
 

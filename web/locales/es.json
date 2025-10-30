@@ -1,9 +1,9 @@
 {
   "title": "Descargador de Videos",
-  "subtitle": "TikTok · Douyin · YouTube · Threads",
-  "description": "Descarga videos gratis de TikTok, Douyin, YouTube y Threads",
+  "subtitle": "TikTok · Douyin · Threads · Twitter · Instagram",
+  "description": "Descarga videos gratis de TikTok, Douyin, Threads, Twitter e Instagram",
   "url_label": "URL del Video",
-  "url_placeholder": "https://youtube.com/watch?v=...",
+  "url_placeholder": "https://www.tiktok.com/@usuario/video/... o https://www.instagram.com/reel/...",
   "download_button": "Descargar",
   "downloading": "Descargando video...",
   "download_ready": "¡Descarga lista!",
@@ -15,10 +15,11 @@
   "error_download_failed": "Descarga fallida",
   "success_message": "¡Descarga exitosa!",
   "platforms": {
-    "youtube": "YouTube",
     "tiktok": "TikTok",
     "douyin": "Douyin",
-    "threads": "Threads"
+    "threads": "Threads",
+    "twitter": "Twitter/X",
+    "instagram": "Instagram"
   },
   "footer": "Hecho por WITHYM",
   "language": "Idioma",
@@ -33,10 +34,10 @@
   "step3": "Hacer clic en descargar",
   "step4": "¡Guardar archivo!",
   "seo": {
-    "title": "Descargador de Videos Gratis - Descargar TikTok, Douyin, YouTube, Threads 2025",
-    "description": "Descarga videos de alta calidad de TikTok, Douyin, YouTube y Threads gratis. Descargador de videos en línea rápido, seguro y fácil. Sin marca de agua, sin inicio de sesión, descargas ilimitadas.",
-    "keywords": "descargador de videos, descargar tiktok, descargar youtube, descargar douyin, descargar threads, guardar video gratis, quitar marca de agua, video HD",
-    "og_title": "Descargador de Videos Gratis - TikTok · YouTube · Douyin · Threads",
+    "title": "Descargador de Videos Gratis - Descargar TikTok, Douyin, Threads, Twitter, Instagram 2025",
+    "description": "Descarga videos de alta calidad de TikTok, Douyin, Threads, Twitter e Instagram gratis. Descargador de videos en línea rápido, seguro y fácil. Sin marca de agua, sin inicio de sesión, descargas ilimitadas.",
+    "keywords": "descargador de videos, descargar tiktok, descargar threads, descargar twitter, descargar instagram, descargar douyin, guardar video gratis, quitar marca de agua, video HD",
+    "og_title": "Descargador de Videos Gratis - TikTok · Threads · Douyin · Twitter · Instagram",
     "og_description": "Descarga videos gratis sin marcas de agua. Herramienta en línea rápida y segura."
   },
   "faq": [
@@ -46,7 +47,7 @@
     },
     {
       "question": "¿Qué plataformas son compatibles?",
-      "answer": "Admitimos TikTok, Douyin, YouTube (videos regulares y Shorts) y Threads. Pronto habrá más plataformas."
+      "answer": "Admitimos TikTok, Douyin, Threads, Twitter/X e Instagram. Pronto habrá más plataformas."
     },
     {
       "question": "¿Los videos descargados tienen marcas de agua?",

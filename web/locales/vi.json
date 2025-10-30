@@ -1,9 +1,9 @@
 {
   "title": "Tải Video",
-  "subtitle": "TikTok · Douyin · YouTube · Threads",
-  "description": "Tải video miễn phí từ TikTok, Douyin, YouTube và Threads",
+  "subtitle": "TikTok · Douyin · Threads · Twitter · Instagram",
+  "description": "Tải video miễn phí từ TikTok, Douyin, Threads, Twitter và Instagram",
   "url_label": "URL Video",
-  "url_placeholder": "https://youtube.com/watch?v=...",
+  "url_placeholder": "https://www.tiktok.com/@user/video/... hoặc https://www.instagram.com/reel/...",
   "download_button": "Tải xuống",
   "downloading": "Đang tải video...",
   "download_ready": "Sẵn sàng tải xuống!",
@@ -15,10 +15,11 @@
   "error_download_failed": "Tải xuống thất bại",
   "success_message": "Tải xuống thành công!",
   "platforms": {
-    "youtube": "YouTube",
     "tiktok": "TikTok",
     "douyin": "Douyin",
-    "threads": "Threads"
+    "threads": "Threads",
+    "twitter": "Twitter/X",
+    "instagram": "Instagram"
   },
   "footer": "Được tạo bởi WITHYM",
   "language": "Ngôn ngữ",
@@ -29,7 +30,40 @@
   "feature_safe": "Tải an toàn",
   "how_to_use": "Cách sử dụng",
   "step1": "Sao chép URL video",
-  "step2": "Dán vào ô trên",
-  "step3": "Nhấn tải xuống",
-  "step4": "Lưu file!"
+  "step2": "Dán vào ô phía trên",
+  "step3": "Nhấn Tải xuống",
+  "step4": "Lưu file!",
+  "seo": {
+    "title": "Tải Video Miễn Phí - TikTok, Douyin, Threads, Twitter, Instagram 2025",
+    "description": "Tải video HD miễn phí từ TikTok, Douyin, Threads, Twitter và Instagram. Công cụ tải video trực tuyến nhanh, an toàn và dễ sử dụng. Không watermark, không cần đăng nhập, tải không giới hạn.",
+    "keywords": "tải video, tải tiktok, tải threads, tải twitter, tải instagram, tải douyin, lưu video miễn phí, xóa watermark, video hd",
+    "og_title": "Tải Video Miễn Phí - TikTok · Threads · Douyin · Twitter · Instagram",
+    "og_description": "Tải video miễn phí không có watermark với công cụ trực tuyến nhanh và an toàn."
+  },
+  "faq": [
+    {
+      "question": "Công cụ tải video này có miễn phí không?",
+      "answer": "Có, hoàn toàn miễn phí. Không có chi phí ẩn hay đăng ký, bạn có thể tải xuống không giới hạn."
+    },
+    {
+      "question": "Hỗ trợ những nền tảng nào?",
+      "answer": "Chúng tôi hỗ trợ TikTok, Douyin, Threads, Twitter/X và Instagram. Sẽ có thêm nhiều nền tảng sớm."
+    },
+    {
+      "question": "Video đã tải có watermark không?",
+      "answer": "Tùy thuộc vào nền tảng. Khi có thể, chúng tôi cung cấp phiên bản không watermark và luôn tải ở chất lượng cao nhất."
+    },
+    {
+      "question": "Tôi có cần đăng nhập để tải video không?",
+      "answer": "Không cần đăng nhập hoặc tạo tài khoản. Chỉ cần dán URL video và bắt đầu tải ngay."
+    },
+    {
+      "question": "Có giới hạn số lần tải không?",
+      "answer": "Không có giới hạn. Bạn có thể tải bao nhiêu video tùy thích."
+    },
+    {
+      "question": "Tôi có thể sử dụng trên điện thoại không?",
+      "answer": "Có, hoạt động tốt trên trình duyệt di động và tương thích hoàn toàn với iOS và Android."
+    }
+  ]
 }

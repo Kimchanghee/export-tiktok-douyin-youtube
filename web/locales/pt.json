@@ -1,9 +1,9 @@
 {
   "title": "Baixador de Vídeos",
-  "subtitle": "TikTok · Douyin · YouTube · Threads",
-  "description": "Baixe vídeos gratuitamente do TikTok, Douyin, YouTube e Threads",
+  "subtitle": "TikTok · Douyin · Threads · Twitter · Instagram",
+  "description": "Baixe vídeos gratuitamente do TikTok, Douyin, Threads, Twitter e Instagram",
   "url_label": "URL do Vídeo",
-  "url_placeholder": "https://youtube.com/watch?v=...",
+  "url_placeholder": "https://www.tiktok.com/@usuario/video/... ou https://www.instagram.com/reel/...",
   "download_button": "Baixar",
   "downloading": "Baixando vídeo...",
   "download_ready": "Download pronto!",
@@ -15,10 +15,11 @@
   "error_download_failed": "Falha no download",
   "success_message": "Download bem-sucedido!",
   "platforms": {
-    "youtube": "YouTube",
     "tiktok": "TikTok",
     "douyin": "Douyin",
-    "threads": "Threads"
+    "threads": "Threads",
+    "twitter": "Twitter/X",
+    "instagram": "Instagram"
   },
   "footer": "Feito por WITHYM",
   "language": "Idioma",
@@ -27,9 +28,42 @@
   "feature_fast": "Download Rápido",
   "feature_quality": "Alta Qualidade",
   "feature_safe": "Download Seguro",
-  "how_to_use": "Como Usar",
-  "step1": "Copiar URL do vídeo",
-  "step2": "Colar acima",
-  "step3": "Clicar em baixar",
-  "step4": "Salvar arquivo!"
+  "how_to_use": "Como usar",
+  "step1": "Copie a URL do vídeo",
+  "step2": "Cole acima",
+  "step3": "Clique em baixar",
+  "step4": "Salve o arquivo!",
+  "seo": {
+    "title": "Baixador de Vídeos Grátis - TikTok, Douyin, Threads, Twitter, Instagram 2025",
+    "description": "Baixe vídeos em HD gratuitamente do TikTok, Douyin, Threads, Twitter e Instagram. Downloader online rápido, seguro e fácil. Sem marca d'água, sem login, downloads ilimitados.",
+    "keywords": "baixar video, download tiktok, download threads, download twitter, download instagram, download douyin, salvar video gratis, remover marca d'água, video hd",
+    "og_title": "Baixador de Vídeos Grátis - TikTok · Threads · Douyin · Twitter · Instagram",
+    "og_description": "Baixe vídeos sem marca d'água gratuitamente. Ferramenta online rápida e segura."
+  },
+  "faq": [
+    {
+      "question": "Este baixador de vídeos é gratuito?",
+      "answer": "Sim, é totalmente gratuito. Sem custos ocultos ou assinaturas, e você pode baixar vídeos ilimitados."
+    },
+    {
+      "question": "Quais plataformas são compatíveis?",
+      "answer": "Damos suporte a TikTok, Douyin, Threads, Twitter/X e Instagram. Mais plataformas em breve."
+    },
+    {
+      "question": "Os vídeos baixados têm marca d'água?",
+      "answer": "Depende da plataforma. Quando possível, fornecemos versões sem marca d'água e sempre baixamos na melhor qualidade disponível."
+    },
+    {
+      "question": "Preciso fazer login para baixar vídeos?",
+      "answer": "Não, não é necessário login ou cadastro. Basta colar a URL do vídeo e iniciar o download imediatamente."
+    },
+    {
+      "question": "Existe limite de downloads?",
+      "answer": "Não, não há limites. Você pode baixar quantos vídeos quiser, quando quiser."
+    },
+    {
+      "question": "Posso usar no celular?",
+      "answer": "Sim, funciona perfeitamente em navegadores móveis e é totalmente compatível com iOS e Android."
+    }
+  ]
 }

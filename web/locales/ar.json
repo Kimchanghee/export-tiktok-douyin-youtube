@@ -1,35 +1,69 @@
 {
-  "title": "تنزيل الفيديو",
-  "subtitle": "TikTok · Douyin · YouTube · Threads",
-  "description": "قم بتنزيل مقاطع الفيديو مجانًا من TikTok و Douyin و YouTube و Threads",
+  "title": "أداة تنزيل الفيديو",
+  "subtitle": "TikTok · Douyin · Threads · Twitter · Instagram",
+  "description": "قم بتنزيل مقاطع الفيديو مجانًا من TikTok وDouyin وThreads وTwitter وInstagram",
   "url_label": "رابط الفيديو",
-  "url_placeholder": "https://youtube.com/watch?v=...",
-  "download_button": "تحميل",
+  "url_placeholder": "https://www.tiktok.com/@user/video/... أو https://www.instagram.com/reel/...",
+  "download_button": "تنزيل",
   "downloading": "جاري تنزيل الفيديو...",
   "download_ready": "التنزيل جاهز!",
   "platform": "المنصة",
   "filename": "اسم الملف",
   "filesize": "الحجم",
-  "download_file": "تحميل الملف",
-  "error_url_required": "الرجاء إدخال رابط",
+  "download_file": "تنزيل الملف",
+  "error_url_required": "يرجى إدخال رابط",
   "error_download_failed": "فشل التنزيل",
-  "success_message": "نجح التنزيل!",
+  "success_message": "تم التنزيل بنجاح!",
   "platforms": {
-    "youtube": "YouTube",
     "tiktok": "TikTok",
     "douyin": "Douyin",
-    "threads": "Threads"
+    "threads": "Threads",
+    "twitter": "Twitter/X",
+    "instagram": "Instagram"
   },
   "footer": "صنع بواسطة WITHYM",
   "language": "اللغة",
   "features_title": "الميزات الرئيسية",
-  "feature_free": "مجاني تمامًا",
+  "feature_free": "مجاني بالكامل",
   "feature_fast": "تنزيل سريع",
   "feature_quality": "جودة عالية",
   "feature_safe": "تنزيل آمن",
-  "how_to_use": "كيفية الاستخدام",
-  "step1": "نسخ رابط الفيديو",
-  "step2": "لصقه أعلاه",
-  "step3": "انقر فوق تنزيل",
-  "step4": "احفظ الملف!"
+  "how_to_use": "طريقة الاستخدام",
+  "step1": "انسخ رابط الفيديو",
+  "step2": "الصق الرابط في الأعلى",
+  "step3": "اضغط على تنزيل",
+  "step4": "احفظ الملف!",
+  "seo": {
+    "title": "أداة تنزيل الفيديو مجانًا - TikTok وDouyin وThreads وTwitter وInstagram 2025",
+    "description": "قم بتنزيل مقاطع الفيديو عالية الدقة مجانًا من TikTok وDouyin وThreads وTwitter وInstagram. أداة تنزيل فيديو عبر الإنترنت سريعة وآمنة وسهلة. بدون علامة مائية، بدون تسجيل دخول، تنزيلات غير محدودة.",
+    "keywords": "تنزيل فيديو, تنزيل tiktok, تنزيل threads, تنزيل twitter, تنزيل instagram, تنزيل douyin, حفظ فيديو مجاني, إزالة العلامة المائية, فيديو hd",
+    "og_title": "أداة تنزيل الفيديو مجانًا - TikTok · Threads · Douyin · Twitter · Instagram",
+    "og_description": "حمّل الفيديوهات مجانًا بدون علامة مائية. أداة إلكترونية سريعة وآمنة."
+  },
+  "faq": [
+    {
+      "question": "هل أداة تنزيل الفيديو هذه مجانية؟",
+      "answer": "نعم، مجانية تمامًا. لا توجد رسوم مخفية أو اشتراكات، ويمكنك تنزيل عدد غير محدود من الفيديوهات."
+    },
+    {
+      "question": "ما المنصات المدعومة؟",
+      "answer": "ندعم TikTok وDouyin وThreads وTwitter/X وInstagram. المزيد من المنصات قادم قريبًا."
+    },
+    {
+      "question": "هل تحتوي الفيديوهات المحمّلة على علامة مائية؟",
+      "answer": "يعتمد ذلك على المنصة. عندما يكون ممكنًا نوفر نسخة بدون علامة مائية، ونعمل دائمًا على أعلى جودة متاحة."
+    },
+    {
+      "question": "هل أحتاج لتسجيل الدخول لتنزيل الفيديوهات؟",
+      "answer": "لا، لا تحتاج إلى تسجيل الدخول أو إنشاء حساب. فقط الصق رابط الفيديو وابدأ التنزيل فورًا."
+    },
+    {
+      "question": "هل هناك حد لعدد التنزيلات؟",
+      "answer": "لا يوجد أي حد. يمكنك تنزيل ما تشاء من الفيديوهات في أي وقت."
+    },
+    {
+      "question": "هل يمكنني الاستخدام على الهاتف المحمول؟",
+      "answer": "نعم، تعمل الأداة بشكل ممتاز على متصفحات الهواتف ومتوافقة بالكامل مع iOS وAndroid."
+    }
+  ]
 }

@@ -1,9 +1,9 @@
 {
   "title": "ดาวน์โหลดวิดีโอ",
-  "subtitle": "TikTok · Douyin · YouTube · Threads",
-  "description": "ดาวน์โหลดวิดีโอฟรีจาก TikTok, Douyin, YouTube และ Threads",
+  "subtitle": "TikTok · Douyin · Threads · Twitter · Instagram",
+  "description": "ดาวน์โหลดวิดีโอฟรีจาก TikTok, Douyin, Threads, Twitter และ Instagram",
   "url_label": "URL วิดีโอ",
-  "url_placeholder": "https://youtube.com/watch?v=...",
+  "url_placeholder": "https://www.tiktok.com/@user/video/... หรือ https://www.instagram.com/reel/...",
   "download_button": "ดาวน์โหลด",
   "downloading": "กำลังดาวน์โหลดวิดีโอ...",
   "download_ready": "พร้อมดาวน์โหลด!",
@@ -15,21 +15,55 @@
   "error_download_failed": "ดาวน์โหลดล้มเหลว",
   "success_message": "ดาวน์โหลดสำเร็จ!",
   "platforms": {
-    "youtube": "YouTube",
     "tiktok": "TikTok",
     "douyin": "Douyin",
-    "threads": "Threads"
+    "threads": "Threads",
+    "twitter": "Twitter/X",
+    "instagram": "Instagram"
   },
   "footer": "สร้างโดย WITHYM",
   "language": "ภาษา",
   "features_title": "คุณสมบัติหลัก",
-  "feature_free": "ฟรีทั้งหมด",
-  "feature_fast": "ดาวน์โหลดเร็ว",
+  "feature_free": "ใช้งานฟรี",
+  "feature_fast": "ดาวน์โหลดรวดเร็ว",
   "feature_quality": "คุณภาพสูง",
   "feature_safe": "ดาวน์โหลดปลอดภัย",
   "how_to_use": "วิธีใช้งาน",
   "step1": "คัดลอก URL วิดีโอ",
   "step2": "วางด้านบน",
   "step3": "คลิกดาวน์โหลด",
-  "step4": "บันทึกไฟล์!"
+  "step4": "บันทึกไฟล์!",
+  "seo": {
+    "title": "ดาวน์โหลดวิดีโอฟรี - TikTok, Douyin, Threads, Twitter, Instagram 2025",
+    "description": "ดาวน์โหลดวิดีโอความคมชัดสูงจาก TikTok, Douyin, Threads, Twitter และ Instagram ฟรี ไม่มีลายน้ำ ดาวน์โหลดรวดเร็ว ปลอดภัย ไม่ต้องเข้าสู่ระบบ ดาวน์โหลดได้ไม่จำกัด",
+    "keywords": "ดาวน์โหลดวิดีโอ, ดาวน์โหลด tiktok, ดาวน์โหลด threads, ดาวน์โหลด twitter, ดาวน์โหลด instagram, ดาวน์โหลด douyin, บันทึกวิดีโอ, ลบลายน้ำ, วิดีโอ hd",
+    "og_title": "ดาวน์โหลดวิดีโอฟรี - TikTok · Threads · Douyin · Twitter · Instagram",
+    "og_description": "ดาวน์โหลดวิดีโอฟรีไม่มีลายน้ำ ด้วยเครื่องมือออนไลน์ที่รวดเร็วและปลอดภัย"
+  },
+  "faq": [
+    {
+      "question": "เครื่องมือนี้ดาวน์โหลดวิดีโอฟรีหรือไม่?",
+      "answer": "ฟรีทั้งหมด ไม่มีค่าซ่อนเร้นหรือค่าสมัครสมาชิก และสามารถดาวน์โหลดวิดีโอได้ไม่จำกัด"
+    },
+    {
+      "question": "รองรับแพลตฟอร์มใดบ้าง?",
+      "answer": "รองรับ TikTok, Douyin, Threads, Twitter/X และ Instagram และจะมีแพลตฟอร์มอื่นเพิ่มเติมเร็ว ๆ นี้"
+    },
+    {
+      "question": "วิดีโอที่ดาวน์โหลดมีลายน้ำหรือไม่?",
+      "answer": "ขึ้นอยู่กับแพลตฟอร์ม หากเป็นไปได้เราจะมอบวิดีโอแบบไม่มีลายน้ำ และดาวน์โหลดด้วยคุณภาพสูงสุดเสมอ"
+    },
+    {
+      "question": "ต้องเข้าสู่ระบบก่อนดาวน์โหลดหรือไม่?",
+      "answer": "ไม่จำเป็น ไม่ต้องเข้าสู่ระบบหรือสมัครสมาชิก เพียงวาง URL ของวิดีโอแล้วเริ่มดาวน์โหลดได้ทันที"
+    },
+    {
+      "question": "มีจำกัดจำนวนดาวน์โหลดหรือไม่?",
+      "answer": "ไม่มีข้อจำกัด ดาวน์โหลดได้ตามต้องการ ทุกเวลา"
+    },
+    {
+      "question": "ใช้บนมือถือได้หรือไม่?",
+      "answer": "ได้แน่นอน รองรับเบราว์เซอร์บนมือถืออย่างสมบูรณ์ และใช้ได้ทั้ง iOS และ Android"
+    }
+  ]
 }

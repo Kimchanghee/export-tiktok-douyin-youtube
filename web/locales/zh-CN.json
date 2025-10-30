@@ -1,24 +1,24 @@
 {
   "title": "视频下载器",
   "subtitle": "TikTok · 抖音 · Threads · Twitter · Instagram",
-  "description": "免费下载TikTok、抖音、Threads、Twitter、Instagram视频。快速安全的在线视频下载工具",
-  "seo_description": "免费TikTok、抖音、Threads、Twitter、Instagram视频下载器 - 下载高清视频无水印。快速、安全、无需登录、无限下载。",
-  "seo_keywords": "tiktok下载, 抖音下载, douyin下载, threads下载, twitter下载, instagram下载, 视频下载器, 免费视频保存, 去除水印, 高清视频下载",
-  "url_label": "视频URL",
-  "url_placeholder": "https://www.tiktok.com/@user/video/... or https://v.douyin.com/...",
+  "description": "免费下载 TikTok、抖音、Threads、Twitter 和 Instagram 视频的在线工具",
+  "seo_description": "免费 TikTok、抖音、Threads、Twitter、Instagram 视频下载器 - 高清无水印下载，快速、安全、无需登录、无限次使用。",
+  "seo_keywords": "tiktok下载, 抖音下载, douyin下载, threads下载, twitter下载, instagram下载, 视频下载器, 免费保存视频, 去除水印, 高清视频下载",
+  "url_label": "视频 URL",
+  "url_placeholder": "https://www.tiktok.com/@user/video/... 或 https://www.instagram.com/reel/...",
   "download_button": "下载",
   "downloading": "正在下载视频...",
-  "download_ready": "下载准备就绪!",
+  "download_ready": "下载准备就绪！",
   "platform": "平台",
   "filename": "文件名",
   "filesize": "大小",
   "download_file": "下载文件",
-  "error_url_required": "请输入URL",
+  "error_url_required": "请输入 URL",
   "error_download_failed": "下载失败",
-  "success_message": "下载成功!",
+  "success_message": "下载成功！",
   "platforms": {
     "tiktok": "TikTok",
-    "douyin": "抖音 (Douyin)",
+    "douyin": "抖音",
     "threads": "Threads",
     "twitter": "Twitter/X",
     "instagram": "Instagram"
@@ -31,36 +31,36 @@
   "features_title": "主要功能",
   "feature_free": "完全免费",
   "feature_fast": "快速下载",
-  "feature_quality": "高清支持",
+  "feature_quality": "高清质量",
   "feature_safe": "安全下载",
   "how_to_use": "使用方法",
-  "step1": "复制视频URL",
+  "step1": "复制视频 URL",
   "step2": "粘贴到上方输入框",
   "step3": "点击下载按钮",
-  "step4": "保存文件!",
+  "step4": "保存文件！",
   "seo": {
-    "title": "免费视频下载器 - 下载TikTok、抖音、YouTube、Threads 2025",
-    "description": "从TikTok、抖音、YouTube和Threads免费下载高清视频。快速、安全、简单的在线视频下载工具。无水印，无需登录，无限下载。",
-    "keywords": "视频下载器, TikTok下载, YouTube下载, 抖音下载, Threads下载, 免费视频保存, 去除水印, 高清视频, 在线下载",
-    "og_title": "免费视频下载器 - TikTok · YouTube · 抖音 · Threads",
-    "og_description": "免费下载视频，无水印。快速安全的在线工具。"
+    "title": "免费视频下载器 - TikTok、抖音、Threads、Twitter、Instagram 2025",
+    "description": "从 TikTok、抖音、Threads、Twitter 和 Instagram 免费下载高清视频。快速、安全、简单的在线视频下载工具。无水印、无需登录、无限制下载。",
+    "keywords": "视频下载器, TikTok下载, Douyin下载, Threads下载, Twitter下载, Instagram下载, 免费保存视频, 去除水印, 高清视频",
+    "og_title": "免费视频下载器 - TikTok · Threads · 抖音 · Twitter · Instagram",
+    "og_description": "免费视频下载，无水印，快速安全的在线工具。"
   },
   "faq": [
     {
       "question": "这个视频下载器免费吗？",
-      "answer": "是的，完全免费。没有隐藏费用或订阅费，您可以无限下载视频。"
+      "answer": "是的，完全免费。没有任何隐藏费用或订阅，可以无限制下载视频。"
     },
     {
       "question": "支持哪些平台？",
-      "answer": "支持TikTok、抖音(Douyin)、Threads、Twitter/X、Instagram。各平台均可高清下载视频和图片。"
+      "answer": "我们支持 TikTok、抖音 (Douyin)、Threads、Twitter/X 和 Instagram。更多平台即将上线。"
     },
     {
       "question": "下载的视频有水印吗？",
-      "answer": "这取决于平台。在可能的情况下，我们提供无水印版本，视频始终以最高质量下载。"
+      "answer": "这取决于平台。在可能的情况下，我们提供无水印版本，并始终以最高质量下载。"
     },
     {
       "question": "下载视频需要登录吗？",
-      "answer": "不需要，您无需登录或注册。只需粘贴视频URL即可立即开始下载。"
+      "answer": "不需要，无需登录或注册。只需粘贴视频 URL 即可立即开始下载。"
     },
     {
       "question": "下载次数有限制吗？",
@@ -68,7 +68,7 @@
     },
     {
       "question": "可以在手机上使用吗？",
-      "answer": "是的，在移动浏览器上完美运行。完全支持iOS和Android。"
+      "answer": "当然可以，在手机浏览器上运行良好，完全支持 iOS 和 Android。"
     }
   ]
 }

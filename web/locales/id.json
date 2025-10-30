@@ -1,9 +1,9 @@
 {
   "title": "Pengunduh Video",
-  "subtitle": "TikTok · Douyin · YouTube · Threads",
-  "description": "Unduh video gratis dari TikTok, Douyin, YouTube, dan Threads",
+  "subtitle": "TikTok · Douyin · Threads · Twitter · Instagram",
+  "description": "Unduh video gratis dari TikTok, Douyin, Threads, Twitter, dan Instagram",
   "url_label": "URL Video",
-  "url_placeholder": "https://youtube.com/watch?v=...",
+  "url_placeholder": "https://www.tiktok.com/@user/video/... atau https://www.instagram.com/reel/...",
   "download_button": "Unduh",
   "downloading": "Mengunduh video...",
   "download_ready": "Unduhan siap!",
@@ -15,10 +15,11 @@
   "error_download_failed": "Unduhan gagal",
   "success_message": "Unduhan berhasil!",
   "platforms": {
-    "youtube": "YouTube",
     "tiktok": "TikTok",
     "douyin": "Douyin",
-    "threads": "Threads"
+    "threads": "Threads",
+    "twitter": "Twitter/X",
+    "instagram": "Instagram"
   },
   "footer": "Dibuat oleh WITHYM",
   "language": "Bahasa",
@@ -31,5 +32,38 @@
   "step1": "Salin URL video",
   "step2": "Tempel di atas",
   "step3": "Klik unduh",
-  "step4": "Simpan file!"
+  "step4": "Simpan file!",
+  "seo": {
+    "title": "Pengunduh Video Gratis - TikTok, Douyin, Threads, Twitter, Instagram 2025",
+    "description": "Unduh video HD secara gratis dari TikTok, Douyin, Threads, Twitter, dan Instagram. Pengunduh video online yang cepat, aman, dan mudah. Tanpa watermark, tanpa login, unduhan tak terbatas.",
+    "keywords": "pengunduh video, download tiktok, download threads, download twitter, download instagram, download douyin, simpan video gratis, hapus watermark, video hd",
+    "og_title": "Pengunduh Video Gratis - TikTok · Threads · Douyin · Twitter · Instagram",
+    "og_description": "Unduh video tanpa watermark secara gratis. Alat online yang cepat dan aman."
+  },
+  "faq": [
+    {
+      "question": "Apakah pengunduh video ini gratis?",
+      "answer": "Ya, sepenuhnya gratis. Tidak ada biaya tersembunyi atau langganan, dan Anda dapat mengunduh video tanpa batas."
+    },
+    {
+      "question": "Platform apa saja yang didukung?",
+      "answer": "Kami mendukung TikTok, Douyin, Threads, Twitter/X, dan Instagram. Platform lainnya akan segera hadir."
+    },
+    {
+      "question": "Apakah video yang diunduh memiliki watermark?",
+      "answer": "Tergantung platform. Jika memungkinkan, kami menyediakan versi tanpa watermark dan selalu mengunduh dalam kualitas tertinggi."
+    },
+    {
+      "question": "Apakah saya perlu login untuk mengunduh video?",
+      "answer": "Tidak, Anda tidak perlu login atau membuat akun. Cukup tempel URL video dan mulai unduh segera."
+    },
+    {
+      "question": "Apakah ada batasan jumlah unduhan?",
+      "answer": "Tidak ada batasan. Anda bisa mengunduh video sebanyak yang Anda mau kapan saja."
+    },
+    {
+      "question": "Bisakah digunakan di ponsel?",
+      "answer": "Ya, bekerja dengan baik di browser seluler dan sepenuhnya mendukung iOS serta Android."
+    }
+  ]
 }

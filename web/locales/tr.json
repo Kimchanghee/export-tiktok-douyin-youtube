@@ -1,9 +1,9 @@
 {
   "title": "Video İndirici",
-  "subtitle": "TikTok · Douyin · YouTube · Threads",
-  "description": "TikTok, Douyin, YouTube ve Threads'ten ücretsiz video indirin",
+  "subtitle": "TikTok · Douyin · Threads · Twitter · Instagram",
+  "description": "TikTok, Douyin, Threads, Twitter ve Instagram'dan ücretsiz video indirin",
   "url_label": "Video URL",
-  "url_placeholder": "https://youtube.com/watch?v=...",
+  "url_placeholder": "https://www.tiktok.com/@kullanici/video/... veya https://www.instagram.com/reel/...",
   "download_button": "İndir",
   "downloading": "Video indiriliyor...",
   "download_ready": "İndirme hazır!",
@@ -15,10 +15,11 @@
   "error_download_failed": "İndirme başarısız",
   "success_message": "İndirme başarılı!",
   "platforms": {
-    "youtube": "YouTube",
     "tiktok": "TikTok",
     "douyin": "Douyin",
-    "threads": "Threads"
+    "threads": "Threads",
+    "twitter": "Twitter/X",
+    "instagram": "Instagram"
   },
   "footer": "WITHYM tarafından yapıldı",
   "language": "Dil",
@@ -27,9 +28,42 @@
   "feature_fast": "Hızlı İndirme",
   "feature_quality": "Yüksek Kalite",
   "feature_safe": "Güvenli İndirme",
-  "how_to_use": "Nasıl Kullanılır",
-  "step1": "Video URL'sini kopyala",
-  "step2": "Yukarıya yapıştır",
-  "step3": "İndir'e tıkla",
-  "step4": "Dosyayı kaydet!"
+  "how_to_use": "Nasıl kullanılır",
+  "step1": "Video URL'sini kopyalayın",
+  "step2": "Yukarıya yapıştırın",
+  "step3": "İndir'e tıklayın",
+  "step4": "Dosyayı kaydedin!",
+  "seo": {
+    "title": "Ücretsiz Video İndirici - TikTok, Douyin, Threads, Twitter, Instagram 2025",
+    "description": "TikTok, Douyin, Threads, Twitter ve Instagram'dan HD videoları ücretsiz indirin. Hızlı, güvenli ve kolay çevrimiçi indirici. Filigran yok, giriş yok, sınırsız indirme.",
+    "keywords": "video indirici, tiktok indir, threads indir, twitter indir, instagram indir, douyin indir, video kaydet, filigran kaldır, hd video",
+    "og_title": "Ücretsiz Video İndirici - TikTok · Threads · Douyin · Twitter · Instagram",
+    "og_description": "Videoları filigransız ve ücretsiz indirin. Hızlı ve güvenli çevrimiçi araç."
+  },
+  "faq": [
+    {
+      "question": "Bu video indirici ücretsiz mi?",
+      "answer": "Evet, tamamen ücretsiz. Gizli ücret veya abonelik yok ve sınırsız sayıda video indirebilirsiniz."
+    },
+    {
+      "question": "Hangi platformlar destekleniyor?",
+      "answer": "TikTok, Douyin, Threads, Twitter/X ve Instagram'ı destekliyoruz. Yakında daha fazla platform eklenecek."
+    },
+    {
+      "question": "İndirilen videolarda filigran var mı?",
+      "answer": "Platforma bağlıdır. Mümkün olduğunda filigransız sürüm sunuyoruz ve her zaman en yüksek kalitede indiriyoruz."
+    },
+    {
+      "question": "Video indirmek için giriş yapmam gerekir mi?",
+      "answer": "Hayır, giriş yapmaya veya kayıt olmaya gerek yok. Video URL'sini yapıştırmanız yeterli, indirme hemen başlar."
+    },
+    {
+      "question": "İndirme sınırı var mı?",
+      "answer": "Hayır, herhangi bir sınır yok. İstediğiniz kadar video indirebilirsiniz."
+    },
+    {
+      "question": "Mobilde kullanabilir miyim?",
+      "answer": "Evet, mobil tarayıcılarda mükemmel çalışır ve hem iOS hem de Android ile tamamen uyumludur."
+    }
+  ]
 }

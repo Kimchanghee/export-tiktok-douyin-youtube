@@ -1,7 +1,7 @@
 {
-  "name": "Free Video Downloader - TikTok, YouTube, Douyin, Threads",
+  "name": "Free Video Downloader - TikTok, Douyin, Threads, Twitter, Instagram",
   "short_name": "Video Downloader",
-  "description": "Download videos from TikTok, YouTube, Douyin, and Threads for free. Fast, safe, and easy.",
+  "description": "Download videos from TikTok, Douyin, Threads, Twitter, and Instagram for free. Fast, safe, and easy.",
   "start_url": "/",
   "display": "standalone",
   "background_color": "#ffffff",

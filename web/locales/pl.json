@@ -1,9 +1,9 @@
 {
   "title": "Pobieranie Wideo",
-  "subtitle": "TikTok · Douyin · YouTube · Threads",
-  "description": "Pobieraj filmy za darmo z TikTok, Douyin, YouTube i Threads",
+  "subtitle": "TikTok · Douyin · Threads · Twitter · Instagram",
+  "description": "Pobieraj filmy za darmo z TikTok, Douyin, Threads, Twittera i Instagrama",
   "url_label": "URL Wideo",
-  "url_placeholder": "https://youtube.com/watch?v=...",
+  "url_placeholder": "https://www.tiktok.com/@uzytkownik/video/... lub https://www.instagram.com/reel/...",
   "download_button": "Pobierz",
   "downloading": "Pobieranie wideo...",
   "download_ready": "Pobieranie gotowe!",
@@ -15,21 +15,55 @@
   "error_download_failed": "Pobieranie nie powiodło się",
   "success_message": "Pobieranie zakończone!",
   "platforms": {
-    "youtube": "YouTube",
     "tiktok": "TikTok",
     "douyin": "Douyin",
-    "threads": "Threads"
+    "threads": "Threads",
+    "twitter": "Twitter/X",
+    "instagram": "Instagram"
   },
   "footer": "Stworzone przez WITHYM",
   "language": "Język",
   "features_title": "Główne Funkcje",
   "feature_free": "Całkowicie Darmowe",
   "feature_fast": "Szybkie Pobieranie",
-  "feature_quality": "Wysoka Jakość",
+    "feature_quality": "Wysoka Jakość",
   "feature_safe": "Bezpieczne Pobieranie",
-  "how_to_use": "Jak Używać",
+  "how_to_use": "Jak używać",
   "step1": "Skopiuj URL wideo",
   "step2": "Wklej powyżej",
   "step3": "Kliknij pobierz",
-  "step4": "Zapisz plik!"
+  "step4": "Zapisz plik!",
+  "seo": {
+    "title": "Darmowy Pobieracz Wideo - TikTok, Douyin, Threads, Twitter, Instagram 2025",
+    "description": "Pobieraj wideo HD za darmo z TikTok, Douyin, Threads, Twittera i Instagrama. Szybki, bezpieczny i prosty downloader online. Bez znaków wodnych, bez logowania, nieograniczone pobieranie.",
+    "keywords": "pobieracz wideo, pobierz tiktok, pobierz threads, pobierz twitter, pobierz instagram, pobierz douyin, darmowe pobieranie, usuń znak wodny, wideo hd",
+    "og_title": "Darmowy Pobieracz Wideo - TikTok · Threads · Douyin · Twitter · Instagram",
+    "og_description": "Pobieraj wideo bez znaku wodnego za darmo. Szybkie i bezpieczne narzędzie online."
+  },
+  "faq": [
+    {
+      "question": "Czy ten pobieracz wideo jest darmowy?",
+      "answer": "Tak, jest całkowicie darmowy. Brak ukrytych opłat ani subskrypcji, możesz pobierać nieograniczoną liczbę filmów."
+    },
+    {
+      "question": "Jakie platformy są obsługiwane?",
+      "answer": "Obsługujemy TikTok, Douyin, Threads, Twitter/X i Instagram. Wkrótce dodamy kolejne platformy."
+    },
+    {
+      "question": "Czy pobrane filmy mają znak wodny?",
+      "answer": "To zależy od platformy. Jeśli to możliwe, dostarczamy wersję bez znaku wodnego i zawsze pobieramy w najwyższej jakości."
+    },
+    {
+      "question": "Czy muszę się logować, aby pobierać filmy?",
+      "answer": "Nie, logowanie ani rejestracja nie są potrzebne. Wystarczy wkleić URL wideo i natychmiast rozpocząć pobieranie."
+    },
+    {
+      "question": "Czy istnieje limit pobrań?",
+      "answer": "Nie, nie ma żadnych ograniczeń. Możesz pobierać dowolną liczbę filmów."
+    },
+    {
+      "question": "Czy mogę korzystać z telefonu?",
+      "answer": "Tak, narzędzie działa świetnie w przeglądarkach mobilnych i jest w pełni kompatybilne z iOS i Androidem."
+    }
+  ]
 }

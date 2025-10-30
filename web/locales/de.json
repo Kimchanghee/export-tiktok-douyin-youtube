@@ -1,9 +1,9 @@
 {
   "title": "Video Downloader",
-  "subtitle": "TikTok · Douyin · YouTube · Threads",
-  "description": "Laden Sie kostenlos Videos von TikTok, Douyin, YouTube und Threads herunter",
+  "subtitle": "TikTok · Douyin · Threads · Twitter · Instagram",
+  "description": "Laden Sie kostenlos Videos von TikTok, Douyin, Threads, Twitter und Instagram herunter",
   "url_label": "Video-URL",
-  "url_placeholder": "https://youtube.com/watch?v=...",
+  "url_placeholder": "https://www.tiktok.com/@nutzer/video/... oder https://www.instagram.com/reel/...",
   "download_button": "Herunterladen",
   "downloading": "Video wird heruntergeladen...",
   "download_ready": "Download bereit!",
@@ -15,10 +15,11 @@
   "error_download_failed": "Download fehlgeschlagen",
   "success_message": "Download erfolgreich!",
   "platforms": {
-    "youtube": "YouTube",
     "tiktok": "TikTok",
     "douyin": "Douyin",
-    "threads": "Threads"
+    "threads": "Threads",
+    "twitter": "Twitter/X",
+    "instagram": "Instagram"
   },
   "footer": "Erstellt von WITHYM",
   "language": "Sprache",
@@ -30,6 +31,39 @@
   "how_to_use": "Anleitung",
   "step1": "Video-URL kopieren",
   "step2": "Oben einfügen",
-  "step3": "Download klicken",
-  "step4": "Datei speichern!"
+  "step3": "Auf „Download\" klicken",
+  "step4": "Datei speichern!",
+  "seo": {
+    "title": "Kostenloser Video Downloader - TikTok, Douyin, Threads, Twitter, Instagram 2025",
+    "description": "Laden Sie HD-Videos kostenlos von TikTok, Douyin, Threads, Twitter und Instagram herunter. Schneller, sicherer und einfacher Online-Downloader ohne Wasserzeichen, ohne Anmeldung, unbegrenzte Downloads.",
+    "keywords": "video downloader, tiktok download, threads download, twitter download, instagram download, douyin download, video speichern, wasserzeichen entfernen, hd video",
+    "og_title": "Kostenloser Video Downloader - TikTok · Threads · Douyin · Twitter · Instagram",
+    "og_description": "Laden Sie Videos kostenlos und ohne Wasserzeichen herunter. Schnelles und sicheres Online-Tool."
+  },
+  "faq": [
+    {
+      "question": "Ist dieser Video-Downloader kostenlos?",
+      "answer": "Ja, er ist völlig kostenlos. Keine versteckten Kosten oder Abonnements und unbegrenzte Downloads."
+    },
+    {
+      "question": "Welche Plattformen werden unterstützt?",
+      "answer": "Wir unterstützen TikTok, Douyin, Threads, Twitter/X und Instagram. Weitere Plattformen folgen."
+    },
+    {
+      "question": "Haben heruntergeladene Videos ein Wasserzeichen?",
+      "answer": "Das hängt von der Plattform ab. Wenn möglich, liefern wir eine Version ohne Wasserzeichen und laden immer in höchster Qualität herunter."
+    },
+    {
+      "question": "Muss ich mich anmelden, um Videos herunterzuladen?",
+      "answer": "Nein, eine Anmeldung oder Registrierung ist nicht erforderlich. Fügen Sie einfach die Video-URL ein und starten Sie den Download sofort."
+    },
+    {
+      "question": "Gibt es ein Download-Limit?",
+      "answer": "Nein, es gibt keine Beschränkungen. Sie können so viele Videos herunterladen, wie Sie möchten."
+    },
+    {
+      "question": "Kann ich den Dienst auf dem Handy nutzen?",
+      "answer": "Ja, er funktioniert perfekt in mobilen Browsern und ist vollständig mit iOS und Android kompatibel."
+    }
+  ]
 }

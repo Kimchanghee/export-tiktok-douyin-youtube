@@ -1,9 +1,9 @@
 {
-  "title": "Загрузчик Видео",
-  "subtitle": "TikTok · Douyin · YouTube · Threads",
-  "description": "Скачивайте видео бесплатно с TikTok, Douyin, YouTube и Threads",
+  "title": "Загрузчик видео",
+  "subtitle": "TikTok · Douyin · Threads · Twitter · Instagram",
+  "description": "Скачивайте видео бесплатно с TikTok, Douyin, Threads, Twitter и Instagram",
   "url_label": "URL видео",
-  "url_placeholder": "https://youtube.com/watch?v=...",
+  "url_placeholder": "https://www.tiktok.com/@user/video/... или https://www.instagram.com/reel/...",
   "download_button": "Скачать",
   "downloading": "Загрузка видео...",
   "download_ready": "Загрузка готова!",
@@ -12,13 +12,14 @@
   "filesize": "Размер",
   "download_file": "Скачать файл",
   "error_url_required": "Пожалуйста, введите URL",
-  "error_download_failed": "Загрузка не удалась",
-  "success_message": "Загрузка успешна!",
+  "error_download_failed": "Ошибка загрузки",
+  "success_message": "Загрузка успешно завершена!",
   "platforms": {
-    "youtube": "YouTube",
     "tiktok": "TikTok",
     "douyin": "Douyin",
-    "threads": "Threads"
+    "threads": "Threads",
+    "twitter": "Twitter/X",
+    "instagram": "Instagram"
   },
   "footer": "Сделано WITHYM",
   "language": "Язык",
@@ -27,9 +28,42 @@
   "feature_fast": "Быстрая загрузка",
   "feature_quality": "Высокое качество",
   "feature_safe": "Безопасная загрузка",
-  "how_to_use": "Как использовать",
-  "step1": "Скопировать URL видео",
-  "step2": "Вставить выше",
-  "step3": "Нажать скачать",
-  "step4": "Сохранить файл!"
+  "how_to_use": "Как пользоваться",
+  "step1": "Скопируйте URL видео",
+  "step2": "Вставьте выше",
+  "step3": "Нажмите «Скачать»",
+  "step4": "Сохраните файл!",
+  "seo": {
+    "title": "Бесплатный загрузчик видео - TikTok, Douyin, Threads, Twitter, Instagram 2025",
+    "description": "Скачивайте видео в HD бесплатно с TikTok, Douyin, Threads, Twitter и Instagram. Быстрый, безопасный и простой онлайн-загрузчик. Без водяных знаков, без входа, неограниченные загрузки.",
+    "keywords": "загрузчик видео, скачать tiktok, скачать threads, скачать twitter, скачать instagram, скачать douyin, сохранить видео, удалить водяной знак, hd видео",
+    "og_title": "Бесплатный загрузчик видео - TikTok · Threads · Douyin · Twitter · Instagram",
+    "og_description": "Скачивайте видео бесплатно и без водяных знаков. Быстрый и безопасный онлайн-инструмент."
+  },
+  "faq": [
+    {
+      "question": "Этот загрузчик видео бесплатный?",
+      "answer": "Да, полностью бесплатный. Нет скрытых платежей или подписок, можно скачивать неограниченное количество видео."
+    },
+    {
+      "question": "Какие платформы поддерживаются?",
+      "answer": "Мы поддерживаем TikTok, Douyin, Threads, Twitter/X и Instagram. Скоро появятся новые платформы."
+    },
+    {
+      "question": "Есть ли водяные знаки на скачанных видео?",
+      "answer": "Зависит от платформы. При возможности мы предоставляем версию без водяного знака и всегда скачиваем в максимальном качестве."
+    },
+    {
+      "question": "Нужно ли входить в аккаунт для скачивания видео?",
+      "answer": "Нет, вход или регистрация не требуются. Просто вставьте URL видео и сразу начинайте загрузку."
+    },
+    {
+      "question": "Есть ли ограничение на количество загрузок?",
+      "answer": "Нет, ограничений нет. Вы можете скачивать столько видео, сколько хотите."
+    },
+    {
+      "question": "Можно ли пользоваться на телефоне?",
+      "answer": "Да, сервис отлично работает в мобильных браузерах и полностью совместим с iOS и Android."
+    }
+  ]
 }

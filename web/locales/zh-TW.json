@@ -1,24 +1,25 @@
 {
   "title": "影片下載器",
-  "subtitle": "TikTok · 抖音 · YouTube · Threads",
-  "description": "免費下載TikTok、抖音、YouTube和Threads影片",
-  "url_label": "影片URL",
-  "url_placeholder": "https://youtube.com/watch?v=...",
+  "subtitle": "TikTok · 抖音 · Threads · Twitter · Instagram",
+  "description": "免費下載 TikTok、抖音、Threads、Twitter 與 Instagram 影片的線上工具",
+  "url_label": "影片 URL",
+  "url_placeholder": "https://www.tiktok.com/@user/video/... 或 https://www.instagram.com/reel/...",
   "download_button": "下載",
   "downloading": "正在下載影片...",
-  "download_ready": "下載準備就緒!",
+  "download_ready": "下載準備就緒！",
   "platform": "平台",
   "filename": "檔案名稱",
   "filesize": "大小",
   "download_file": "下載檔案",
-  "error_url_required": "請輸入URL",
+  "error_url_required": "請輸入 URL",
   "error_download_failed": "下載失敗",
-  "success_message": "下載成功!",
+  "success_message": "下載成功！",
   "platforms": {
-    "youtube": "YouTube",
     "tiktok": "TikTok",
     "douyin": "抖音",
-    "threads": "Threads"
+    "threads": "Threads",
+    "twitter": "Twitter/X",
+    "instagram": "Instagram"
   },
   "footer": "Made by WITHYM",
   "language": "語言",
@@ -28,8 +29,41 @@
   "feature_quality": "高畫質支援",
   "feature_safe": "安全下載",
   "how_to_use": "使用方法",
-  "step1": "複製影片URL",
-  "step2": "貼上到上方輸入框",
+  "step1": "複製影片 URL",
+  "step2": "貼上至上方輸入框",
   "step3": "點擊下載按鈕",
-  "step4": "儲存檔案!"
+  "step4": "保存檔案！",
+  "seo": {
+    "title": "免費影片下載器 - TikTok、抖音、Threads、Twitter、Instagram 2025",
+    "description": "從 TikTok、抖音、Threads、Twitter 與 Instagram 免費下載高畫質影片。快速、安全又簡單的線上影片下載工具。無浮水印、免登入、無限次下載。",
+    "keywords": "影片下載器, tiktok下載, 抖音下載, threads下載, twitter下載, instagram下載, 免費影片保存, 移除浮水印, 高清影片",
+    "og_title": "免費影片下載器 - TikTok · Threads · 抖音 · Twitter · Instagram",
+    "og_description": "免費下載無浮水印影片，快速又安全的線上工具。"
+  },
+  "faq": [
+    {
+      "question": "這個影片下載器是免費的嗎？",
+      "answer": "是的，完全免費。沒有任何隱藏費用或訂閱限制，可以無限制地下載影片。"
+    },
+    {
+      "question": "支援哪些平台？",
+      "answer": "我們支援 TikTok、抖音、Threads、Twitter/X 與 Instagram。更多平台即將推出。"
+    },
+    {
+      "question": "下載的影片會有浮水印嗎？",
+      "answer": "視平台而定。在可行的情況下，我們提供無浮水印版本，並以最高畫質下載。"
+    },
+    {
+      "question": "下載影片需要登入嗎？",
+      "answer": "不需要，無需登入或註冊。只要貼上影片 URL 就能立即下載。"
+    },
+    {
+      "question": "下載次數有限制嗎？",
+      "answer": "沒有任何限制。您可以隨時下載任意數量的影片。"
+    },
+    {
+      "question": "可以在手機上使用嗎？",
+      "answer": "當然可以，在手機瀏覽器上運作順暢，完全支援 iOS 與 Android。"
+    }
+  ]
 }

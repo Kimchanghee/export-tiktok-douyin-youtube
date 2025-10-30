@@ -1,9 +1,9 @@
 {
   "title": "Video Downloader",
-  "subtitle": "TikTok · Douyin · YouTube · Threads",
-  "description": "Download gratis video's van TikTok, Douyin, YouTube en Threads",
+  "subtitle": "TikTok · Douyin · Threads · Twitter · Instagram",
+  "description": "Download gratis video's van TikTok, Douyin, Threads, Twitter en Instagram",
   "url_label": "Video URL",
-  "url_placeholder": "https://youtube.com/watch?v=...",
+  "url_placeholder": "https://www.tiktok.com/@gebruiker/video/... of https://www.instagram.com/reel/...",
   "download_button": "Downloaden",
   "downloading": "Video downloaden...",
   "download_ready": "Download klaar!",
@@ -15,10 +15,11 @@
   "error_download_failed": "Download mislukt",
   "success_message": "Download gelukt!",
   "platforms": {
-    "youtube": "YouTube",
     "tiktok": "TikTok",
     "douyin": "Douyin",
-    "threads": "Threads"
+    "threads": "Threads",
+    "twitter": "Twitter/X",
+    "instagram": "Instagram"
   },
   "footer": "Gemaakt door WITHYM",
   "language": "Taal",
@@ -27,9 +28,42 @@
   "feature_fast": "Snelle Download",
   "feature_quality": "Hoge Kwaliteit",
   "feature_safe": "Veilige Download",
-  "how_to_use": "Hoe Te Gebruiken",
-  "step1": "Kopieer video URL",
+  "how_to_use": "Hoe te gebruiken",
+  "step1": "Kopieer de video-URL",
   "step2": "Plak hierboven",
   "step3": "Klik op downloaden",
-  "step4": "Bestand opslaan!"
+  "step4": "Sla het bestand op!",
+  "seo": {
+    "title": "Gratis Video Downloader - TikTok, Douyin, Threads, Twitter, Instagram 2025",
+    "description": "Download HD-video's gratis van TikTok, Douyin, Threads, Twitter en Instagram. Snelle, veilige en eenvoudige online downloader zonder watermerk, zonder login, onbeperkte downloads.",
+    "keywords": "video downloader, tiktok downloaden, threads downloaden, twitter downloaden, instagram downloaden, douyin downloaden, video opslaan, watermerk verwijderen, hd video",
+    "og_title": "Gratis Video Downloader - TikTok · Threads · Douyin · Twitter · Instagram",
+    "og_description": "Download video's gratis zonder watermerk. Een snelle en veilige online tool."
+  },
+  "faq": [
+    {
+      "question": "Is deze video-downloader gratis?",
+      "answer": "Ja, volledig gratis. Geen verborgen kosten of abonnementen en onbeperkt downloaden."
+    },
+    {
+      "question": "Welke platforms worden ondersteund?",
+      "answer": "We ondersteunen TikTok, Douyin, Threads, Twitter/X en Instagram. Meer platforms volgen binnenkort."
+    },
+    {
+      "question": "Hebben gedownloade video's een watermerk?",
+      "answer": "Dat hangt af van het platform. Waar mogelijk leveren we een versie zonder watermerk en altijd in de hoogste kwaliteit."
+    },
+    {
+      "question": "Moet ik inloggen om video's te downloaden?",
+      "answer": "Nee, inloggen of registreren is niet nodig. Plak gewoon de video-URL en start direct met downloaden."
+    },
+    {
+      "question": "Is er een limiet op het aantal downloads?",
+      "answer": "Nee, er is geen limiet. Je kunt zoveel video's downloaden als je wilt."
+    },
+    {
+      "question": "Kan ik het op mobiel gebruiken?",
+      "answer": "Ja, het werkt perfect in mobiele browsers en is volledig compatibel met iOS en Android."
+    }
+  ]
 }
