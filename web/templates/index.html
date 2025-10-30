@@ -26,8 +26,8 @@
     <meta name="twitter:description" content="{{ translations.seo_description|default(translations.description) }}">
 
     <!-- Alternate Language Links -->
-    {% for lang_code, lang_name in languages.items() %}
-    <link rel="alternate" hreflang="{{ lang_code }}" href="{{ request.base_url }}?lang={{ lang_code }}">
+    {% for lang in languages %}
+    <link rel="alternate" hreflang="{{ lang.code }}" href="{{ request.base_url }}?lang={{ lang.code }}">
     {% endfor %}
 
     <title>{{ translations.title }} - {{ translations.subtitle }}</title>
