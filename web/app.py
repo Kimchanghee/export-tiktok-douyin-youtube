@@ -18,6 +18,7 @@ from werkzeug.utils import secure_filename
 sys.path.insert(0, os.path.dirname(os.path.dirname(os.path.abspath(__file__))))
 
 from controller.DouyinExtract import download_tiktok_douyin_video
+from controller.TikTokExtractYTDLP import download_tiktok_video
 from controller.ThreadsExtract import download_threads_video, ThreadsDownloadError
 from controller.TwitterExtract import download_twitter_video
 from controller.InstagramExtract import download_instagram_media
@@ -261,7 +262,13 @@ def download():
         filepath = None
 
         try:
-            if platform in ["tiktok", "douyin"]:
+            if platform == "tiktok":
+                # Use yt-dlp based downloader for TikTok
+                filepath = download_tiktok_video(url, download_dir)
+                print(f"[TikTok] Downloaded: {filepath}")
+
+            elif platform == "douyin":
+                # Use original downloader for Douyin (Chinese TikTok)
                 filepath = download_tiktok_douyin_video(url)
                 if filepath and os.path.exists(filepath):
                     # Move to download dir
