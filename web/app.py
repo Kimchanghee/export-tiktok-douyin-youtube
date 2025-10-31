@@ -188,6 +188,8 @@ def detect_platform(url):
         return "twitter"
     elif "instagram.com" in url_lower:
         return "instagram"
+    elif "youtube.com" in url_lower or "youtu.be" in url_lower:
+        return "youtube"
     else:
         return None
 
@@ -292,6 +294,57 @@ def download():
                 filepath = download_instagram_media(url, download_dir)
                 print(f"[Instagram] Downloaded: {filepath}")
 
+            elif platform == "youtube":
+                # Use yt-dlp for YouTube with safe filename
+                import datetime
+                import re
+                timestamp = datetime.datetime.now().strftime("%Y%m%d_%H%M%S")
+
+                # Extract video ID from URL for safer filename
+                video_id = ""
+                if "youtu.be/" in url:
+                    video_id = url.split("youtu.be/")[1].split("?")[0]
+                elif "youtube.com" in url:
+                    if "v=" in url:
+                        video_id = url.split("v=")[1].split("&")[0]
+                    elif "/shorts/" in url:
+                        video_id = url.split("/shorts/")[1].split("?")[0]
+
+                # Use simple, safe filename based on video ID only
+                safe_filename = f"youtube_{video_id}_{timestamp}"
+                output_path = os.path.join(download_dir, f"{safe_filename}.mp4")
+
+                cmd = [
+                    "yt-dlp",
+                    "-f", "best",
+                    "-o", output_path,
+                    url
+                ]
+                print(f"[YouTube] Running: {' '.join(cmd)}")
+
+                result = subprocess.run(cmd, capture_output=True, text=True, timeout=300)
+
+                if result.returncode == 0:
+                    # Check if the file exists
+                    if os.path.exists(output_path):
+                        filepath = output_path
+                        print(f"[YouTube] Downloaded: {filepath}")
+                    else:
+                        # Find any file in the directory that was just created
+                        for file in os.listdir(download_dir):
+                            file_path = os.path.join(download_dir, file)
+                            if os.path.isfile(file_path):
+                                filepath = file_path
+                                print(f"[YouTube] Found file: {filepath}")
+                                break
+
+                    if not filepath:
+                        raise Exception("YouTube download completed but file not found")
+                else:
+                    raise Exception(f"yt-dlp failed: {result.stderr}")
+
+                print(f"[YouTube] Final path: {filepath}")
+
             if not filepath or not os.path.exists(filepath):
                 raise Exception("Download failed - no file created")
 
@@ -390,6 +443,7 @@ def platforms():
             {'id': 'threads', 'name': 'Threads', 'types': ['videos', 'images']},
             {'id': 'twitter', 'name': 'Twitter/X', 'types': ['videos']},
             {'id': 'instagram', 'name': 'Instagram', 'types': ['videos', 'reels', 'photos']},
+            {'id': 'youtube', 'name': 'YouTube', 'types': ['videos', 'shorts']},
         ]
     })
 
