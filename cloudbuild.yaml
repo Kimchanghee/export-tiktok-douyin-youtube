@@ -42,7 +42,7 @@ steps:
       - '--concurrency'
       - '80'
       - '--set-env-vars'
-      - 'FLASK_ENV=production,PORT=8080'
+      - 'FLASK_ENV=production'
 
 # Images to store in Container Registry
 images:
