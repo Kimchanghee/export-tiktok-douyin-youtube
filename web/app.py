@@ -433,6 +433,62 @@ def languages():
         'default': DEFAULT_LANGUAGE
     })
 
+@app.route('/about')
+def about():
+    """About page"""
+    lang = get_user_language()
+    translations = load_translation(lang)
+
+    return render_template(
+        'page.html',
+        translations=translations,
+        current_lang=lang,
+        page_title=translations.get('about', {}).get('title', 'About Us'),
+        page_content=translations.get('about', {}).get('content', 'About our service.')
+    )
+
+@app.route('/privacy')
+def privacy():
+    """Privacy Policy page"""
+    lang = get_user_language()
+    translations = load_translation(lang)
+
+    return render_template(
+        'page.html',
+        translations=translations,
+        current_lang=lang,
+        page_title=translations.get('privacy', {}).get('title', 'Privacy Policy'),
+        page_content=translations.get('privacy', {}).get('content', 'Privacy policy content.')
+    )
+
+@app.route('/terms')
+def terms():
+    """Terms of Service page"""
+    lang = get_user_language()
+    translations = load_translation(lang)
+
+    return render_template(
+        'page.html',
+        translations=translations,
+        current_lang=lang,
+        page_title=translations.get('terms', {}).get('title', 'Terms of Service'),
+        page_content=translations.get('terms', {}).get('content', 'Terms of service content.')
+    )
+
+@app.route('/contact')
+def contact():
+    """Contact page"""
+    lang = get_user_language()
+    translations = load_translation(lang)
+
+    return render_template(
+        'page.html',
+        translations=translations,
+        current_lang=lang,
+        page_title=translations.get('contact', {}).get('title', 'Contact Us'),
+        page_content=translations.get('contact', {}).get('content', 'Contact information.')
+    )
+
 @app.route('/api/platforms')
 def platforms():
     """List supported platforms"""
@@ -510,6 +566,21 @@ def sitemap():
 
             xml.append(f'    <xhtml:link rel="alternate" hreflang="{alt_code}" href="{alt_url}"/>')
 
+        xml.append('  </url>')
+
+    # Add static pages
+    static_pages = [
+        {'path': '/about', 'priority': '0.8'},
+        {'path': '/privacy', 'priority': '0.7'},
+        {'path': '/terms', 'priority': '0.7'},
+        {'path': '/contact', 'priority': '0.6'}
+    ]
+    for page in static_pages:
+        xml.append('  <url>')
+        xml.append(f'    <loc>{base_url}{page["path"]}</loc>')
+        xml.append(f'    <lastmod>{today}</lastmod>')
+        xml.append('    <changefreq>monthly</changefreq>')
+        xml.append(f'    <priority>{page["priority"]}</priority>')
         xml.append('  </url>')
 
     # Add API documentation endpoints

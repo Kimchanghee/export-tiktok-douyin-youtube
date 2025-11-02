@@ -44,5 +44,79 @@
     "keywords": "video downloader, tiktok downloader, douyin downloader, threads downloader, twitter downloader, instagram downloader, free video saver, no watermark, hd video",
     "og_title": "Free Video Downloader - TikTok · Douyin · Threads · Twitter · Instagram",
     "og_description": "Download videos without watermarks — fast, secure, and high quality."
+  },
+  "faq": [
+    {
+      "question": "Is this video downloader free?",
+      "answer": "Yes, it's completely free! You can download unlimited videos without any hidden costs or subscriptions."
+    },
+    {
+      "question": "Which platforms are supported?",
+      "answer": "We support TikTok, Douyin (抖音), Threads, Twitter/X, and Instagram. Download videos and images in high quality from all these platforms."
+    },
+    {
+      "question": "Will downloaded videos have watermarks?",
+      "answer": "It depends on the platform. When possible, we provide watermark-free versions, and always deliver the highest quality available."
+    },
+    {
+      "question": "Do I need to log in to download videos?",
+      "answer": "No login required! Simply paste the video URL and download instantly without signing up."
+    },
+    {
+      "question": "Is there a download limit?",
+      "answer": "No limits! Download as many videos as you want, completely unlimited."
+    },
+    {
+      "question": "Can I use this on mobile?",
+      "answer": "Absolutely! Our downloader works perfectly on mobile browsers, supporting both iOS and Android."
+    }
+  ],
+  "faq_title": "Frequently Asked Questions",
+  "how_to_guide_title": "How to Download Videos",
+  "how_to_guide": [
+    {
+      "step": "1",
+      "title": "Copy Video URL",
+      "description": "Open TikTok, Douyin, Threads, Twitter, or Instagram and copy the video link you want to download."
+    },
+    {
+      "step": "2",
+      "title": "Paste URL",
+      "description": "Paste the copied URL into the input field above on our website."
+    },
+    {
+      "step": "3",
+      "title": "Click Download",
+      "description": "Click the 'Download' button and wait a few seconds for the video to be processed."
+    },
+    {
+      "step": "4",
+      "title": "Save Your Video",
+      "description": "Once ready, click the download link to save the video to your device."
+    }
+  ],
+  "about": {
+    "title": "About Us",
+    "content": "Video Downloader is a free online service that allows you to download videos from popular social media platforms including TikTok, Douyin (抖音), Threads, Twitter/X, and Instagram. Our mission is to provide a fast, secure, and user-friendly way to save your favorite videos without any hassle.\n\nWe believe that everyone should have easy access to content they love. That's why we created this tool - completely free, with no registration required, and unlimited downloads. Whether you're saving videos for offline viewing, creating compilations, or archiving content, our downloader makes it simple.\n\nOur service supports multiple languages and works seamlessly on desktop and mobile devices. We continuously update our technology to ensure compatibility with the latest platform changes, providing you with the best possible downloading experience."
+  },
+  "privacy": {
+    "title": "Privacy Policy",
+    "content": "Last updated: November 2025\n\nYour privacy is important to us. This Privacy Policy explains how we collect, use, and protect your information when you use our video downloading service.\n\n1. Information We Collect\nWe collect minimal information necessary to provide our service:\n- Video URLs you submit for download\n- Basic analytics data (page views, download counts)\n- Browser information and IP address (for security purposes)\n\n2. How We Use Your Information\n- To process video downloads\n- To improve our service quality\n- To prevent abuse and maintain security\n- To display relevant advertisements through Google AdSense\n\n3. Cookies and Tracking\nWe use cookies to:\n- Remember your language preference\n- Analyze site usage through Google Analytics\n- Serve personalized advertisements through Google AdSense\n\n4. Third-Party Services\nWe use:\n- Google Analytics for usage statistics\n- Google AdSense for advertisements\n- Cloud hosting services for file processing\n\n5. Data Storage and Security\nDownloaded videos are temporarily stored on our servers and automatically deleted within 1 hour. We do not permanently store or share your downloaded content.\n\n6. Your Rights\nYou have the right to:\n- Access your personal data\n- Request data deletion\n- Opt-out of cookies (except essential ones)\n\n7. Children's Privacy\nOur service is not intended for users under 13 years of age.\n\n8. Changes to This Policy\nWe may update this policy periodically. Changes will be posted on this page.\n\nFor questions about privacy, contact us through our Contact page."
+  },
+  "terms": {
+    "title": "Terms of Service",
+    "content": "Last updated: November 2025\n\nBy using our Video Downloader service, you agree to these Terms of Service.\n\n1. Service Description\nOur service allows you to download videos from TikTok, Douyin, Threads, Twitter/X, and Instagram for personal, non-commercial use.\n\n2. Acceptable Use\nYou agree to:\n- Use this service only for personal, non-commercial purposes\n- Respect copyright and intellectual property rights\n- Not use downloaded content in ways that violate platform terms\n- Not abuse or overload our service\n\n3. Prohibited Activities\nYou may not:\n- Download content you don't have rights to\n- Use our service for commercial redistribution\n- Attempt to reverse engineer or hack our service\n- Use automated tools to mass-download content\n\n4. Copyright and Intellectual Property\nAll downloaded content belongs to its original creators. You are responsible for ensuring you have the right to download and use any content. We respect DMCA and will respond to valid takedown requests.\n\n5. Service Availability\nWe provide this service 'as is' without guarantees of:\n- Uninterrupted availability\n- Error-free operation\n- Compatibility with all videos or platforms\n\n6. Limitation of Liability\nWe are not liable for:\n- Damages resulting from service use\n- Copyright violations by users\n- Loss of data or downloaded files\n- Third-party platform changes affecting functionality\n\n7. Advertising\nOur free service is supported by advertisements through Google AdSense. By using our service, you agree to view these advertisements.\n\n8. Changes to Terms\nWe reserve the right to modify these terms at any time. Continued use constitutes acceptance of updated terms.\n\n9. Governing Law\nThese terms are governed by applicable international laws.\n\n10. Contact\nFor questions about these terms, please contact us through our Contact page."
+  },
+  "contact": {
+    "title": "Contact Us",
+    "subtitle": "Get in Touch",
+    "content": "Have questions, suggestions, or need help? We'd love to hear from you!\n\nWhile we don't currently have a support email system set up, you can reach out to us through the following channels:\n\nFor technical issues, feature requests, or general inquiries, please visit our GitHub repository where you can open an issue or discussion.\n\nWe typically respond within 24-48 hours during business days.\n\nThank you for using our Video Downloader service!"
+  },
+  "nav": {
+    "home": "Home",
+    "about": "About",
+    "privacy": "Privacy Policy",
+    "terms": "Terms of Service",
+    "contact": "Contact"
   }
 }

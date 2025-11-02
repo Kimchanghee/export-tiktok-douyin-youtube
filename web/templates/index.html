@@ -567,15 +567,167 @@
             justify-content: center;
         }
 
+        .content-section {
+            background: #fff;
+            border: 1px solid #e0e0e0;
+            border-radius: 8px;
+            padding: 32px;
+            margin-bottom: 24px;
+        }
+
+        body.dark-mode .content-section {
+            background: #2d2d2d;
+            border-color: #404040;
+        }
+
+        .content-section h2 {
+            font-size: 24px;
+            margin-bottom: 24px;
+            color: #111;
+            text-align: center;
+        }
+
+        body.dark-mode .content-section h2 {
+            color: #f5f5f5;
+        }
+
+        .how-to-steps {
+            display: flex;
+            flex-direction: column;
+            gap: 20px;
+        }
+
+        .step-item {
+            display: flex;
+            gap: 16px;
+            align-items: flex-start;
+        }
+
+        .step-number {
+            flex-shrink: 0;
+            width: 40px;
+            height: 40px;
+            background: #2563eb;
+            color: #fff;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-weight: 600;
+            font-size: 18px;
+        }
+
+        .step-content h3 {
+            font-size: 18px;
+            margin-bottom: 8px;
+            color: #111;
+        }
+
+        body.dark-mode .step-content h3 {
+            color: #f5f5f5;
+        }
+
+        .step-content p {
+            font-size: 14px;
+            color: #6b7280;
+            line-height: 1.6;
+        }
+
+        body.dark-mode .step-content p {
+            color: #9ca3af;
+        }
+
+        .faq-list {
+            display: flex;
+            flex-direction: column;
+            gap: 16px;
+        }
+
+        .faq-item {
+            border: 1px solid #e5e7eb;
+            border-radius: 6px;
+            padding: 16px;
+            transition: box-shadow 0.2s;
+        }
+
+        body.dark-mode .faq-item {
+            border-color: #404040;
+        }
+
+        .faq-item:hover {
+            box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+        }
+
+        .faq-question {
+            font-weight: 600;
+            margin-bottom: 8px;
+            color: #111;
+            font-size: 16px;
+        }
+
+        body.dark-mode .faq-question {
+            color: #f5f5f5;
+        }
+
+        .faq-answer {
+            color: #6b7280;
+            font-size: 14px;
+            line-height: 1.6;
+        }
+
+        body.dark-mode .faq-answer {
+            color: #9ca3af;
+        }
+
         .footer {
             text-align: center;
             padding: 32px 20px;
             color: #6b7280;
             font-size: 14px;
+            background: #fff;
+            border-top: 1px solid #e0e0e0;
         }
 
         body.dark-mode .footer {
             color: #9ca3af;
+            background: #2d2d2d;
+            border-top-color: #404040;
+        }
+
+        .footer-content {
+            max-width: 1200px;
+            margin: 0 auto;
+        }
+
+        .footer-links {
+            display: flex;
+            justify-content: center;
+            gap: 24px;
+            margin-bottom: 16px;
+            flex-wrap: wrap;
+        }
+
+        .footer-links a {
+            color: #2563eb;
+            text-decoration: none;
+            transition: color 0.2s;
+        }
+
+        body.dark-mode .footer-links a {
+            color: #60a5fa;
+        }
+
+        .footer-links a:hover {
+            color: #1d4ed8;
+            text-decoration: underline;
+        }
+
+        body.dark-mode .footer-links a:hover {
+            color: #93c5fd;
+        }
+
+        .footer-text {
+            margin-top: 8px;
         }
 
         @media (max-width: 768px) {
@@ -711,6 +863,37 @@
             </div>
         </div>
 
+        {% if translations.how_to_guide %}
+        <div class="content-section how-to-section">
+            <h2>{{ translations.how_to_guide_title|default('How to Download Videos') }}</h2>
+            <div class="how-to-steps">
+                {% for step in translations.how_to_guide %}
+                <div class="step-item">
+                    <div class="step-number">{{ step.step }}</div>
+                    <div class="step-content">
+                        <h3>{{ step.title }}</h3>
+                        <p>{{ step.description }}</p>
+                    </div>
+                </div>
+                {% endfor %}
+            </div>
+        </div>
+        {% endif %}
+
+        {% if translations.faq %}
+        <div class="content-section faq-section">
+            <h2>{{ translations.faq_title|default('FAQ') }}</h2>
+            <div class="faq-list">
+                {% for item in translations.faq %}
+                <div class="faq-item">
+                    <div class="faq-question">{{ item.question }}</div>
+                    <div class="faq-answer">{{ item.answer }}</div>
+                </div>
+                {% endfor %}
+            </div>
+        </div>
+        {% endif %}
+
         {% if adsense.enabled and adsense.slots.bottom.enabled %}
         <div class="ad-space">
             <ins class="adsbygoogle"
@@ -727,7 +910,17 @@
     </div>
 
     <footer class="footer">
-        {{ translations.footer }}
+        <div class="footer-content">
+            <div class="footer-links">
+                <a href="/about">{{ translations.nav.about|default('About') }}</a>
+                <a href="/privacy">{{ translations.nav.privacy|default('Privacy Policy') }}</a>
+                <a href="/terms">{{ translations.nav.terms|default('Terms of Service') }}</a>
+                <a href="/contact">{{ translations.nav.contact|default('Contact') }}</a>
+            </div>
+            <div class="footer-text">
+                {{ translations.footer }}
+            </div>
+        </div>
     </footer>
 
     <script>
