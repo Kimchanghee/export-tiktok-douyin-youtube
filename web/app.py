@@ -310,14 +310,14 @@ def download():
                     elif "/shorts/" in url:
                         video_id = url.split("/shorts/")[1].split("?")[0]
 
-                # Use simple, safe filename based on video ID only
-                safe_filename = f"youtube_{video_id}_{timestamp}"
-                output_path = os.path.join(download_dir, f"{safe_filename}.mp4")
+                # Download to temp name first, then rename
+                temp_output = os.path.join(download_dir, "temp_youtube.%(ext)s")
 
                 cmd = [
                     "yt-dlp",
-                    "-f", "best",
-                    "-o", output_path,
+                    "-f", "best[ext=mp4]/best",
+                    "-o", temp_output,
+                    "--restrict-filenames",
                     url
                 ]
                 print(f"[YouTube] Running: {' '.join(cmd)}")
@@ -325,20 +325,25 @@ def download():
                 result = subprocess.run(cmd, capture_output=True, text=True, timeout=300)
 
                 if result.returncode == 0:
-                    # Check if the file exists
-                    if os.path.exists(output_path):
-                        filepath = output_path
-                        print(f"[YouTube] Downloaded: {filepath}")
-                    else:
-                        # Find any file in the directory that was just created
-                        for file in os.listdir(download_dir):
-                            file_path = os.path.join(download_dir, file)
-                            if os.path.isfile(file_path):
-                                filepath = file_path
-                                print(f"[YouTube] Found file: {filepath}")
-                                break
+                    # Find the downloaded file
+                    temp_file = None
+                    for file in os.listdir(download_dir):
+                        if file.startswith("temp_youtube."):
+                            temp_file = os.path.join(download_dir, file)
+                            break
 
-                    if not filepath:
+                    if temp_file and os.path.exists(temp_file):
+                        # Get file extension
+                        ext = os.path.splitext(temp_file)[1]
+                        # Create safe filename
+                        safe_filename = f"youtube_{video_id}_{timestamp}{ext}"
+                        final_path = os.path.join(download_dir, safe_filename)
+
+                        # Rename to safe filename
+                        os.rename(temp_file, final_path)
+                        filepath = final_path
+                        print(f"[YouTube] Downloaded and renamed: {filepath}")
+                    else:
                         raise Exception("YouTube download completed but file not found")
                 else:
                     raise Exception(f"yt-dlp failed: {result.stderr}")
